@@ -11,7 +11,7 @@
 * Please view the wiki-pages for more information
 
 ## Staff:
-* Presentor: Alon Tsalik Shmilovich
+* Presentor: Alon Tsalik Shmilovich <br>
 [![Alon](https://avatars1.githubusercontent.com/u/17544440?v=3&s=80)](https://github.com/alonshmilo)
 * Academic advisor: Assaf b. Spanier
 

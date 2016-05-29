@@ -10,3 +10,5 @@
 ### Staff:
 * Presentor: Alon Tsalik Shmilovich
 * Academic advisor: Assaf b. Spanier
+
+###[Issue Board](https://huboard.com/alonshmilo/MedicalData_jce/)

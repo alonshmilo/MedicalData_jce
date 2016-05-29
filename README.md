@@ -17,6 +17,8 @@
 
 ##[Issue Board](https://huboard.com/alonshmilo/MedicalData_jce/)
 
+##[Project schedule](https://calendar.google.com/calendar/embed?src=42dhkqae5c9avq8hv4cbs1j5t0%40group.calendar.google.com&ctz=Asia/Jerusalem)
+
 Please view the wiki-pages for more information
 
 ## Project Documents

@@ -1,6 +1,4 @@
 # Deep Learning in Medical Data
-# MedicalData_jce
-
 
 ![Project logo](https://github.com/alonshmilo/MedicalData_jce/blob/master/pics/logo.jpg?raw=true)
 
@@ -12,3 +10,6 @@
 * Academic advisor: Assaf b. Spanier
 
 ###[Issue Board](https://huboard.com/alonshmilo/MedicalData_jce/)
+
+### Wiki
+Please view the wiki-pages for more information

@@ -23,7 +23,7 @@ Please view the wiki-pages for more information
 
 ## Project Documents
 - All documents
-- [[Article Links]]
+- [Article Links](https://github.com/alonshmilo/MedicalData_jce/wiki/Article-Links)
 
 ## Stages pages
 Under construction

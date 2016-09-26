@@ -1,4 +1,4 @@
-# Deep Learning in Medical Data
+# Deep Learning in Medical Data - Analyzing CT images
 
 ![Project logo](https://github.com/alonshmilo/MedicalData_jce/blob/master/pics/logo.jpg?raw=true)
 
@@ -11,8 +11,8 @@
 * Please view the wiki-pages for more information
 
 ## Staff:
-* Presentor: Alon Tsalik Shmilovich <br>
-[![Alon](https://avatars1.githubusercontent.com/u/17544440?v=3&s=80)](https://github.com/alonshmilo)
+* Presentors: Alon Tsalik Shmilovich and Stav Barazani <br>
+[![Alon](https://avatars1.githubusercontent.com/u/17544440?v=3&s=80)](https://github.com/alonshmilo)[![Stav](https://avatars1.githubusercontent.com/u/17544440?v=3&s=80)](https://github.com/stavdv)
 * Academic advisor: Assaf b. Spanier
 
 ##[Issue Board](https://huboard.com/alonshmilo/MedicalData_jce/)

@@ -28,4 +28,4 @@ Please view the wiki-pages for more information
 ## Stages pages
 Under construction
 - Project inception
-- Project offer
+- Project Proposal

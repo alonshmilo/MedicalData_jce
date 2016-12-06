@@ -13,7 +13,7 @@
 ## Staff:
 * Presentors: Alon Tsalik Shmilovich and Stav Barazani <br>
 [![Alon](https://avatars1.githubusercontent.com/u/17544440?v=3&s=80)](https://github.com/alonshmilo)[![Stav](https://avatars0.githubusercontent.com/u/17568093?v=3&s=400)](https://github.com/stavdv)
-* Academic advisor: Assaf b. Spanier
+* Academic advisor: AS
 
 ##[Issue Board](https://huboard.com/alonshmilo/MedicalData_jce/)
 
@@ -28,4 +28,4 @@ Please view the wiki-pages for more information
 ## Stages pages
 Under construction
 - Project inception
-- Project offer
+- Project Proposal

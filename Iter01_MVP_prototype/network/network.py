@@ -10,7 +10,7 @@ num_layers = input("How many layers in the network? ")
 
 
 # Import data
-
+#################################
 
 # Parameters
 learning_rate = 0.1
@@ -23,6 +23,11 @@ n_input = 784 # data input (img shape = 28*28)
 img_shape = 28
 n_classes = 2 # number of classes for calssification - bone, not bone ######################## consider 2???
 dropout = 0.5 # Dropout, probobility to keep units
+
+# tf Graph input
+keep_prob = tf.placeholder(tf.float32)
+x = tf.placeholder(tf.float32, [None, n_input])
+y = tf.placeholder(tf.float32, [None, n_classes])
 
 # Store weights and biases
 
@@ -84,4 +89,22 @@ def conv_net(t, weights, biases, dropout, num_layers):
     output = tf.add(tf.matmul(fc1, weights['out'], biases['out']))
     return output
 
-prediction = conv_net(x, weights, biases, )
+prediction = conv_net(x, weights, biases, keep_prob)
+
+# Define loss and optimizer
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(prediction, y))
+optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
+
+# Evaluate model
+correct_pred = tf.equal(tf.argmax(prediction,1), tf.argmax(y,1))
+accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+
+# Initializing all variables
+init = tf.initialize_all_variables()
+
+
+
+# Run:
+
+with tf.Session() as sess:
+    sess.run(init)

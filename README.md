@@ -27,6 +27,9 @@ Please view the wiki-pages for more information
 - [Article Links](https://github.com/alonshmilo/MedicalData_jce/wiki/Article-Links)
 
 ## Stages pages
-Under construction
-- Project inception
-- Project Proposal
+- [Project inception](https://github.com/alonshmilo/MedicalData_jce/wiki/Project-Inception-and-Planing)
+- [Iteration 0 ZFR](https://github.com/alonshmilo/MedicalData_jce/wiki/Iteration-0-ZFR)
+- [Iteration 1 MVP](https://github.com/alonshmilo/MedicalData_jce/wiki/Iteration-1-MVP)
+- Iteration 2
+- Iteration 3
+- Iteration 4

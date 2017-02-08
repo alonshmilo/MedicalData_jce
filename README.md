@@ -4,9 +4,9 @@
 
 
 ## Disclaimer
-* This is the repository from my first degree B.Sc in Software engineer for year 2016-2017
+* This is the repository from our first degree B.Sc in Software engineer for year 2016-2017
 * The project is scheduled between May 2016 untill July 2017, and takes place in the [Jerusale College of Engineering](www.jce.ac.il), in Ramat Bet HaKerem, Jerusalem, Israel.
-* The project is being written during the end of 3rd year and 4th year of my study. 
+* The project is being written during the end of 3rd year and 4th year of our study. 
 * This repository will include all the codes and information about the progress of the project, from the bid stage to the presentation.
 * Please view the wiki-pages for more information
 

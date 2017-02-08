@@ -23,7 +23,7 @@
 Please view the wiki-pages for more information
 
 ## Project Documents
-- [All documents](https://github.com/alonshmilo/MedicalData_jce/blob/master/docs/README.md)
+- [All documents](https://github.com/alonshmilo/MedicalData_jce/tree/master/docs)
 - [Article Links](https://github.com/alonshmilo/MedicalData_jce/wiki/Article-Links)
 
 ## Iteration pages

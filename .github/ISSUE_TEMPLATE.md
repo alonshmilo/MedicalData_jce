@@ -3,8 +3,8 @@
 ### Explanation:
 
 ### Checklist:
-- [] Code
-- [] Reading
-- [] Documenting reading
-- [] Project book
-- [] Advisor consult
+- [ ] Code
+- [ ] Reading
+- [ ] Documenting in relevant working document
+- [ ] Project Diary
+- [ ] Advisor consult

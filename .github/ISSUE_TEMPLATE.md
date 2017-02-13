@@ -3,8 +3,8 @@
 ### Explanation:
 
 ### Checklist:
-- [ ] Code
-- [ ] Reading
-- [ ] Documenting in relevant working document
-- [ ] Project Diary
-- [ ] Advisor consult
+- [ ] Background review
+- [ ] Added to working document
+- [ ] Tests passed
+- [ ] On iteration goals
+- [ ] Consult

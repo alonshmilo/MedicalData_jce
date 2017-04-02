@@ -16,9 +16,9 @@
 [![Stav](https://avatars0.githubusercontent.com/u/17568093?v=3&s=80)](https://github.com/stavdv)
 * Academic advisor: AS
 
-##[Issue Board](https://huboard.com/alonshmilo/MedicalData_jce/)
+## [Issue Board](https://huboard.com/alonshmilo/MedicalData_jce/)
 
-##[Project schedule](https://calendar.google.com/calendar/embed?src=42dhkqae5c9avq8hv4cbs1j5t0%40group.calendar.google.com&ctz=Asia/Jerusalem)
+## [Project schedule](https://calendar.google.com/calendar/embed?src=42dhkqae5c9avq8hv4cbs1j5t0%40group.calendar.google.com&ctz=Asia/Jerusalem)
 
 Please view the wiki-pages for more information
 
@@ -30,6 +30,6 @@ Please view the wiki-pages for more information
 - [Project inception](https://github.com/alonshmilo/MedicalData_jce/wiki/Project-Inception-and-Planing)
 - [Iteration 0 ZFR](https://github.com/alonshmilo/MedicalData_jce/wiki/Iteration-0-ZFR)
 - [Iteration 1 MVP](https://github.com/alonshmilo/MedicalData_jce/wiki/Iteration-1-MVP)
-- [Iteration 2](https://github.com/alonshmilo/MedicalData_jce/wiki/Iteration-2)
+- [Iteration 2 DRC](https://github.com/alonshmilo/MedicalData_jce/wiki/Iteration-2-DRC)
 - Iteration 3
 - Iteration 4

@@ -18,7 +18,7 @@ This will download all required libraries, install and add them to the environme
 We will here train a CNN model. This is for tests and real data. 
 
 NOTE: First see [Section 1.2](#12-installation) for installation of the required packages. 
-Please remember to change the path if needed.
+**Please remember to change the path if needed!!!**
 
 Lets **create** a model :
 ```cshell

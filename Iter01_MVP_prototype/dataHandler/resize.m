@@ -7,6 +7,7 @@ resizeCt = CTresize2((volumeNiiImage) , 240 , 240, 155);
 figure;imshow(resizeCt(:,:,3));
 nii = make_nii(resizeCt);
 save_nii(nii ,newName);
+gzip(newName);
 
 end
 

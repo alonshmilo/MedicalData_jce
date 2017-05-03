@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-    Modified at Wed May 3 19:20:00 2017
     Created on Wed Dec  9 14:55:43 2015
     This script is to convert the txt annotation files to appropriate format needed by YOLO
-    
-    @CModied by: Alon Shmiloivich
-    
     @author: Guanghan Ning
     Email: gnxr9@mail.missouri.edu
     """
@@ -14,7 +10,6 @@ import os
 from os import walk, getcwd
 from PIL import Image
 
-"""Change this when needed:"""
 classes = ["001"]
 
 def convert(size, box):
@@ -35,7 +30,7 @@ def convert(size, box):
 
 """ Configure Paths"""
 mypath = "Labels/001/"
-outpath = "Labels/001/bones/"
+outpath = "Labels/001/bone/"
 
 cls = "001"
 if cls not in classes:
@@ -49,6 +44,7 @@ list_file = open('%s/%s_list.txt'%(wd, cls), 'w')
 txt_name_list = []
 for (dirpath, dirnames, filenames) in walk(mypath):
     txt_name_list.extend(filenames)
+    txt_name_list.remove('.DS_Store')
     break
 print(txt_name_list)
 
@@ -83,6 +79,7 @@ for txt_name in txt_name_list:
             xmax = elems[2]
             ymin = elems[1]
             ymax = elems[3]
+            print('x:',(xmin,xmax),'y:',(ymin,ymax))
             #
             img_path = str('%s/images/%s/%s.JPEG'%(wd, cls, os.path.splitext(txt_name)[0]))
             #t = magic.from_file(img_path)
@@ -93,7 +90,7 @@ for txt_name in txt_name_list:
             #w = int(xmax) - int(xmin)
             #h = int(ymax) - int(ymin)
             # print(xmin)
-            print(w, h)
+            print(w,h)
             b = (float(xmin), float(xmax), float(ymin), float(ymax))
             bb = convert((w,h), b)
             print(bb)

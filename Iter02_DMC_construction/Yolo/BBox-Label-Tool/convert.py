@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 """
+    Modified at Wed May 3 19:20:00 2017
     Created on Wed Dec  9 14:55:43 2015
     This script is to convert the txt annotation files to appropriate format needed by YOLO
+    
+    @CModied by: Alon Shmiloivich
+    
     @author: Guanghan Ning
     Email: gnxr9@mail.missouri.edu
     """
@@ -10,7 +14,8 @@ import os
 from os import walk, getcwd
 from PIL import Image
 
-classes = ["stopsign"]
+"""Change this when needed:"""
+classes = ["001"]
 
 def convert(size, box):
     dw = 1./size[0]
@@ -29,10 +34,10 @@ def convert(size, box):
 """-------------------------------------------------------------------"""
 
 """ Configure Paths"""
-mypath = "labels/stopsign_original/"
-outpath = "labels/stopsign/"
+mypath = "Labels/001/"
+outpath = "Labels/001/bones/"
 
-cls = "stopsign"
+cls = "001"
 if cls not in classes:
     exit(0)
 cls_id = classes.index(cls)
@@ -55,7 +60,7 @@ for txt_name in txt_name_list:
     txt_path = mypath + txt_name
     print("Input:" + txt_path)
     txt_file = open(txt_path, "r")
-    lines = txt_file.read().split('\r\n')   #for ubuntu, use "\r\n" instead of "\n"
+    lines = txt_file.read().split('\n')   #for ubuntu, use "\r\n" instead of "\n"
     
     """ Open output text files """
     txt_outpath = outpath + txt_name

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+    Modified on Wed May 3 19:29:00 2017
     Created on Wed Dec  9 14:55:43 2015
     This script is to convert the txt annotation files to appropriate format needed by YOLO
     @author: Guanghan Ning
@@ -10,7 +11,7 @@ import os
 from os import walk, getcwd
 from PIL import Image
 
-classes = ["001"]
+classes = ["001"] # Changes when needed:(This is the folder)
 
 def convert(size, box):
     dw = 1./size[0]
@@ -29,10 +30,10 @@ def convert(size, box):
 """-------------------------------------------------------------------"""
 
 """ Configure Paths"""
-mypath = "Labels/001/"
-outpath = "Labels/001/bone/"
+mypath = "Labels/001/" #change this when needed
+outpath = "Labels/001/bone/" #change this when needed
 
-cls = "001"
+cls = "001" #cls is like classes
 if cls not in classes:
     exit(0)
 cls_id = classes.index(cls)
@@ -46,7 +47,7 @@ for (dirpath, dirnames, filenames) in walk(mypath):
     txt_name_list.extend(filenames)
     txt_name_list.remove('.DS_Store')
     break
-print(txt_name_list)
+print(txt_name_list) #check
 
 """ Process """
 for txt_name in txt_name_list:

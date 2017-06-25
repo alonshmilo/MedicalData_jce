@@ -64,4 +64,20 @@ If the lines with the corresponding lines are not commented out, the given path 
  The system also assumes that the task’s classes are indexed increasing by one (not 0,10,20 but 0,1,2).
 * You are strongly advised to normalize the intensity of the data within the ROI to a zero-mean, unary-variance space. Our default configuration significantly underperforms if intensities are in another range of values.
 
+**1.4. GPU Processing**
+Small networks can be run on the cpu.
+But 3D CNNs of considerable size require processing on the GPU.
+For this, an installation of [Nvidia’s CUDA](https://developer.nvidia.com/cuda-toolkit) is needed.
+Make sure to acquire a version compatible with your GPU drivers.
+Theano needs to be able to find CUDA’s compiler, the nvcc, in the environment’s path.
+It also dynamically links to cublas.so libraries, which need to be visible in the environment’s.
+Prior to running DeepMedic on the GPU, you must manually add the paths to the folders containing these files in your environment's variables.
+As an example, in a cshell this can be done with setenv:
+
+    setenv PATH '/path-to/cuda/7.0.28/bin':$PATH
+    setenv LD_LIBRARY_PATH '/path-to/cuda/7.0.28/lib64
+    
+
+
+
 

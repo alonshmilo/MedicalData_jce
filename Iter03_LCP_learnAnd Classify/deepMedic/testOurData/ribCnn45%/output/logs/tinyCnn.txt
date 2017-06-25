@@ -1,0 +1,86 @@
+2017-06-19 20:46:34.077626 >> CONFIG: The configuration file for the model-creation session was loaded from: /Users/stavbarazani/Documents/deepmedic/ribCnn/configFiles/tinyCnn/model/modelConfig.cfg
+2017-06-19 20:46:34.077952 >> 
+===========    NEW CREATE-MODEL SESSION    ============
+2017-06-19 20:46:34.079931 >> =============================================================
+2017-06-19 20:46:34.080062 >> =============== PARAMETERS FOR MODEL CREATION ===============
+2017-06-19 20:46:34.080211 >> =============================================================
+2017-06-19 20:46:34.080334 >> CNN model's name = tinyCnn
+2017-06-19 20:46:34.080478 >> Main output folder = /Users/stavbarazani/Documents/deepmedic/ribCnn/output
+2017-06-19 20:46:34.080558 >> Path and filename to save model = /Users/stavbarazani/Documents/deepmedic/ribCnn/output/cnnModels/tinyCnn
+2017-06-19 20:46:34.080695 >> ~~~~~~~~~~~~~~~~~~Model parameters~~~~~~~~~~~~~~~~
+2017-06-19 20:46:34.080824 >> Number of Classes (including background) = 2
+2017-06-19 20:46:34.080928 >> ~~Normal Pathway~~
+2017-06-19 20:46:34.081127 >> Number of Input Channels = 1
+2017-06-19 20:46:34.081274 >> Number of Layers = 3
+2017-06-19 20:46:34.081388 >> Number of Feature Maps per layer = [4, 5, 6]
+2017-06-19 20:46:34.081564 >> Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2017-06-19 20:46:34.081735 >> Receptive Field = [7, 7, 7]
+2017-06-19 20:46:34.081876 >> Residual connections added at the output of layers (indices from 0) = []
+2017-06-19 20:46:34.081991 >> Layers that will be made of Lower Rank (indices from 0) = []
+2017-06-19 20:46:34.082071 >> Lower Rank layers will be made of rank = []
+2017-06-19 20:46:34.082174 >> ~~Subsampled Pathway~~
+2017-06-19 20:46:34.082360 >> Use subsampled Pathway = False
+2017-06-19 20:46:34.082440 >> Number of subsampled pathways that will be built = 0
+2017-06-19 20:46:34.082568 >> Number of Layers (per sub-pathway) = []
+2017-06-19 20:46:34.082678 >> Number of Feature Maps per layer (per sub-pathway) = []
+2017-06-19 20:46:34.082772 >> Kernel Dimensions per layer = []
+2017-06-19 20:46:34.082884 >> Receptive Field = []
+2017-06-19 20:46:34.083012 >> Subsampling Factor per dimension (per sub-pathway) = []
+2017-06-19 20:46:34.083093 >> Residual connections added at the output of layers (indices from 0) = []
+2017-06-19 20:46:34.083197 >> Layers that will be made of Lower Rank (indices from 0) = []
+2017-06-19 20:46:34.083301 >> Lower Rank layers will be made of rank = []
+2017-06-19 20:46:34.083361 >> ~~Fully Connected Pathway~~
+2017-06-19 20:46:34.083493 >> Number of additional FC layers (Excluding the Classif. Layer) = 0
+2017-06-19 20:46:34.083590 >> Number of Feature Maps in the additional FC layers = []
+2017-06-19 20:46:34.083744 >> Residual connections added at the output of layers (indices from 0) = []
+2017-06-19 20:46:34.083832 >> Layers that will be made of Lower Rank (indices from 0) = []
+2017-06-19 20:46:34.083955 >> Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [1, 1, 1]
+2017-06-19 20:46:34.084015 >> ~~Size Of Image Segments~~
+2017-06-19 20:46:34.084114 >> Size of Segments for Training = [25, 25, 25]
+2017-06-19 20:46:34.084213 >> Size of Segments for Validation = [7, 7, 7]
+2017-06-19 20:46:34.084281 >> Size of Segments for Testing = [45, 45, 45]
+2017-06-19 20:46:34.084342 >> ~~Batch Sizes~~
+2017-06-19 20:46:34.084433 >> Batch Size for Training = 10
+2017-06-19 20:46:34.084554 >> Batch Size for Validation = 50
+2017-06-19 20:46:34.084630 >> Batch Size for Testing = 10
+2017-06-19 20:46:34.084751 >> ~~Dropout Rates~~
+2017-06-19 20:46:34.084826 >> Drop.R. for each layer in Normal Pathway = []
+2017-06-19 20:46:34.084899 >> Drop.R. for each layer in Subsampled Pathway = []
+2017-06-19 20:46:34.085063 >> Drop.R. for each layer in FC Pathway (additional FC layers + Classific.Layer at end) = [0.5]
+2017-06-19 20:46:34.085151 >> ~~Weight Initialization~~
+2017-06-19 20:46:34.085227 >> Classic random N(0,0.01) initialization (0), or ala "Delving Into Rectifier" (1) = 1
+2017-06-19 20:46:34.085289 >> ~~Activation Function~~
+2017-06-19 20:46:34.085428 >> ReLU (0), or PReLU (1) = 1
+2017-06-19 20:46:34.085540 >> ~~Batch Normalization~~
+2017-06-19 20:46:34.085619 >> Apply BN straight on pathways' inputs (eg straight on segments) = [False, False, True, False]
+2017-06-19 20:46:34.085724 >> Batch Normalization uses a rolling average for inference, over this many batches = 60
+2017-06-19 20:46:34.085841 >> ========== Done with printing session's parameters ==========
+2017-06-19 20:46:34.085931 >> =============================================================
+2017-06-19 20:46:34.086034 >> 
+=========== Creating the CNN model ===============
+2017-06-19 20:46:34.086789 >> ...Building the CNN model...
+2017-06-19 20:46:34.087316 >> [Pathway_NORMAL] is being built...
+2017-06-19 20:46:34.088483 >> 	[Pathway_NORMAL]: Input's Shape: (Train) [10, 1, 25, 25, 25], (Val) [50, 1, 7, 7, 7], (Test) [10, 1, 45, 45, 45]
+2017-06-19 20:46:34.088637 >> 	[Conv.Layer_0], Filter Shape: [4, 1, 3, 3, 3]
+2017-06-19 20:46:34.088773 >> 	[Conv.Layer_0], Input's Shape: (Train) [10, 1, 25, 25, 25], (Val) [50, 1, 7, 7, 7], (Test) [10, 1, 45, 45, 45]
+2017-06-19 20:46:34.120200 >> 	[Conv.Layer_1], Filter Shape: [5, 4, 3, 3, 3]
+2017-06-19 20:46:34.120361 >> 	[Conv.Layer_1], Input's Shape: (Train) [10, 4, 23, 23, 23], (Val) [50, 4, 5, 5, 5], (Test) [10, 4, 43, 43, 43]
+2017-06-19 20:46:34.180214 >> 	[Conv.Layer_2], Filter Shape: [6, 5, 3, 3, 3]
+2017-06-19 20:46:34.180400 >> 	[Conv.Layer_2], Input's Shape: (Train) [10, 5, 21, 21, 21], (Val) [50, 5, 3, 3, 3], (Test) [10, 5, 41, 41, 41]
+2017-06-19 20:46:34.230346 >> 	[Pathway_NORMAL]: Output's Shape: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2017-06-19 20:46:34.230541 >> [Pathway_NORMAL] done.
+2017-06-19 20:46:34.232484 >> DEBUG: Shape of the kernel of the first FC layer is : [1, 1, 1]
+2017-06-19 20:46:34.232644 >> DEBUG: Input to the FC Pathway will be padded by that many voxels per dimension: [0, 0, 0]
+2017-06-19 20:46:34.233006 >> [Pathway_FC] is being built...
+2017-06-19 20:46:34.233229 >> 	[Pathway_FC]: Input's Shape: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2017-06-19 20:46:34.233407 >> 	[Conv.Layer_0], Filter Shape: [2, 6, 1, 1, 1]
+2017-06-19 20:46:34.233550 >> 	[Conv.Layer_0], Input's Shape: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2017-06-19 20:46:34.293745 >> 	[Pathway_FC]: Output's Shape: (Train) [10, 2, 19, 19, 19], (Val) [50, 2, 1, 1, 1], (Test) [10, 2, 39, 39, 39]
+2017-06-19 20:46:34.293970 >> [Pathway_FC] done.
+2017-06-19 20:46:34.295976 >> Adding the final Softmax Target layer...
+2017-06-19 20:46:34.303719 >> Finished building the CNN's model.
+2017-06-19 20:46:34.303862 >> 
+=========== Saving the model ===============
+2017-06-19 20:46:34.305990 >> Saving network to: /Users/stavbarazani/Documents/deepmedic/ribCnn/output/cnnModels/tinyCnn.initial.2017-06-19.20.46.34.305850.save
+2017-06-19 20:46:34.454905 >> Model saved.
+2017-06-19 20:46:34.455102 >> =========== Creation of the model: "tinyCnn" finished =================

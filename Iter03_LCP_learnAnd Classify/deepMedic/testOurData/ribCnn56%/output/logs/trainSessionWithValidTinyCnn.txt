@@ -1,0 +1,605 @@
+2017-04-30 12:55:56.497519 >> CONFIG: The configuration file for the training session was loaded from: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/configFiles/tinyCnn/train/trainConfigWithValidation.cfg
+2017-04-30 12:55:56.497703 >> =========== Loading the CNN model for training... ===============
+2017-04-30 12:55:56.500549 >> WARN: A CNN-Model to use was specified both in the command line input and in the train-config-file! The input by the command line will be used: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/cnnModels/tinyCnn.initial.2017-04-30.12.54.19.747493.save
+2017-04-30 12:55:56.500653 >> ...Loading the network can take a few minutes if the model is big...
+2017-04-30 12:56:08.934269 >> The CNN model was loaded successfully from: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/cnnModels/tinyCnn.initial.2017-04-30.12.54.19.747493.save
+2017-04-30 12:56:08.939074 >> ===========       NEW TRAINING SESSION         ===============
+2017-04-30 12:56:08.939201 >> =============================================================
+2017-04-30 12:56:08.939294 >> =============== PARAMETERS FOR THIS SESSION =================
+2017-04-30 12:56:08.939446 >> =============================================================
+2017-04-30 12:56:08.939555 >> Session's name = trainSessionWithValidTinyCnn
+2017-04-30 12:56:08.939711 >> CNN model's name = tinyCnn
+2017-04-30 12:56:08.939832 >> CNN model was loaded from = /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/cnnModels/tinyCnn.initial.2017-04-30.12.54.19.747493.save
+2017-04-30 12:56:08.939949 >> ~~Output~~
+2017-04-30 12:56:08.940078 >> Main output folder = /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output
+2017-04-30 12:56:08.940152 >> Path and filename to save trained models = /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/cnnModels//trainSessionWithValidTinyCnn//tinyCnn.trainSessionWithValidTinyCnn
+2017-04-30 12:56:08.940323 >> ~~~~~~~~~~~~~~~~~~Generic Information~~~~~~~~~~~~~~~~
+2017-04-30 12:56:08.940416 >> Number of Classes (incl. background) (from cnnModel) = 2
+2017-04-30 12:56:08.940564 >> Number of Channels (Normal Pathway) (from cnnModel) = 1
+2017-04-30 12:56:08.940668 >> Number of Cases for Training = 1
+2017-04-30 12:56:08.940755 >> Number of Cases for Validation = 1
+2017-04-30 12:56:08.940828 >> ~~~~~~~~~~~~~~~~~~Training parameters~~~~~~~~~~~~~~~~
+2017-04-30 12:56:08.940954 >> Filepaths to Channels of the Training Cases = [['/Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/train/Arterial_Phase_3_0_B30f_A10Z.nii.gz']]
+2017-04-30 12:56:08.941090 >> Filepaths to Ground-Truth labels of the Training Cases = ['/Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/train/Arterial_Phase_3_0_B40f_A10Z_BONE_78.nii.gz']
+2017-04-30 12:56:08.941230 >> ~~Sampling~~
+2017-04-30 12:56:08.941355 >> Region-Of-Interest Masks provided = True
+2017-04-30 12:56:08.941453 >> Filepaths to ROI Masks of the Training Cases = ['/Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/train/Arterial_Phase_3_0_B40f_BONE_78.nii.gz']
+2017-04-30 12:56:08.941524 >> ~~Advanced Sampling~~
+2017-04-30 12:56:08.941653 >> Using default sampling = True. NOTE: Adv.Sampl.Params are auto-set to perform default sampling if True.
+2017-04-30 12:56:08.941747 >> Type of Sampling = Fore/Background (0)
+2017-04-30 12:56:08.941836 >> Sampling Categories = ['Foreground', 'Background']
+2017-04-30 12:56:08.944233 >> Percent of Samples to extract per Sampling Category = [ 0.5  0.5]
+2017-04-30 12:56:08.944431 >> Provided Weight-Maps, pointing where to focus sampling for each category (if False, samples will be extracted based on GT and ROI) = False
+2017-04-30 12:56:08.947728 >> Paths to weight-maps for sampling of each category = None
+2017-04-30 12:56:08.947874 >> ~~Training Cycle~~
+2017-04-30 12:56:08.948158 >> Number of Epochs = 2
+2017-04-30 12:56:08.948260 >> Number of Subepochs per epoch = 2
+2017-04-30 12:56:08.948403 >> Number of cases to load per Subepoch (for extracting the samples for this subepoch) = 50
+2017-04-30 12:56:08.948592 >> Number of Segments loaded on GPU per subepoch for Training = 1000. NOTE: This number of segments divided by the batch-size defines the number of optimization-iterations that will be performed every subepoch!
+2017-04-30 12:56:08.948671 >> ~~Learning Rate Schedule~~
+2017-04-30 12:56:08.948819 >> Schedule Type: Stable (0), Auto (1), Predefined (2), Exponential (3) = 3
+2017-04-30 12:56:08.948920 >> [Stable/Auto/Predefined] When decreasing Learning Rate, divide LR by = 2.0
+2017-04-30 12:56:08.949070 >> [Stable/Auto] Wait that many epochs before lowering LR = 3
+2017-04-30 12:56:08.949187 >> [Auto] Minimum increase in validation accuracy (0. to 1.) that resets the waiting counter = 0.0005
+2017-04-30 12:56:08.949330 >> [Predefined] Predefined Schedule of Epochs when the LR will be lowered = None
+2017-04-30 12:56:08.949500 >> [Exponential] [Number of initial epochs to not change LR and Mom, final value of LR, final value of Momentum] = [1, 0.00390625, 0.9]
+2017-04-30 12:56:08.949601 >> ~~Data Augmentation During Training~~
+2017-04-30 12:56:08.949729 >> Reflect images per axis = [True, False, False]
+2017-04-30 12:56:08.949809 >> Perform intensity-augmentation [I'= (I+shift)*mult] = False
+2017-04-30 12:56:08.949925 >> [Int. Augm.] Sample Shift from N(mu,std) = []
+2017-04-30 12:56:08.950058 >> [Int. Augm.] Sample Multi from N(mu,std) = []
+2017-04-30 12:56:08.950162 >> [Int. Augm.] (DEBUGGING:) full parameters [no(0)/images(1)/segms(2), nonNorm(0)/norm(1), shift, mult] = [0, 'plcholder', [], []]
+2017-04-30 12:56:08.950243 >> ~~~~~~~~~~~~~~~~~~Validation parameters~~~~~~~~~~~~~~~~
+2017-04-30 12:56:08.950319 >> Perform Validation on Samples throughout training? = True
+2017-04-30 12:56:08.950388 >> Perform Full Inference on validation cases every few epochs? = True
+2017-04-30 12:56:08.950537 >> Filepaths to Channels of the Validation Cases (Req for either of the above) = [['/Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/validation/Arterial_Phase_3_0_B30f_A10Z.nii.gz']]
+2017-04-30 12:56:08.950685 >> Provided Ground-Truth for Validation = True. NOTE: Required for Val on samples. Not Req for Full-Inference, but DSC will be reported if provided.
+2017-04-30 12:56:08.950832 >> Filepaths to Ground-Truth labels of the Validation Cases = ['/Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/validation/Arterial_Phase_3_0_B40f_A10Z_BONE_78.nii.gz']
+2017-04-30 12:56:08.950990 >> Provided ROI masks for Validation = True. NOTE: Validation-sampling and Full-Inference will be limited within this mask if provided. If not provided, Negative Validation samples will be extracted from whole volume, except if advanced-sampling is enabled, and the user provided separate weight-maps for sampling.
+2017-04-30 12:56:08.951099 >> Filepaths to ROI masks for Validation Cases = ['/Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/validation/Arterial_Phase_3_0_B40f_BONE_78.nii.gz']
+2017-04-30 12:56:08.951258 >> ~~~~~~~Validation on Samples throughout Training~~~~~~~
+2017-04-30 12:56:08.951396 >> Number of Segments loaded on GPU per subepoch for Validation = 5000
+2017-04-30 12:56:08.951479 >> ~~Advanced Sampling~~
+2017-04-30 12:56:08.951629 >> Using default uniform sampling for validation = True. NOTE: Adv.Sampl.Params are auto-set to perform uniform-sampling if True.
+2017-04-30 12:56:08.951740 >> Type of Sampling = Uniform (1)
+2017-04-30 12:56:08.951875 >> Sampling Categories = ['Uniform']
+2017-04-30 12:56:08.951964 >> Percent of Samples to extract per Sampling Category = [1.0]
+2017-04-30 12:56:08.952039 >> Provided Weight-Maps, pointing where to focus sampling for each category (if False, samples will be extracted based on GT and ROI) = False
+2017-04-30 12:56:08.952153 >> Paths to weight-maps for sampling of each category = None
+2017-04-30 12:56:08.952245 >> ~~~~~Validation with Full Inference on Validation Cases~~~~~
+2017-04-30 12:56:08.952409 >> Perform Full-Inference on Val. cases every that many epochs = 1
+2017-04-30 12:56:08.952528 >> ~~Predictions (segmentations and prob maps on val. cases)~~
+2017-04-30 12:56:08.952675 >> Save Segmentations = True
+2017-04-30 12:56:08.952824 >> Save Probability Maps for each class = [True, True]
+2017-04-30 12:56:08.952982 >> Filepaths to save results per case = ['/Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/predictions/trainSessionWithValidTinyCnn/predictions//pred_brats_2013_pat0003_1.nii.gz']
+2017-04-30 12:56:08.953117 >> ~~Feature Maps~~
+2017-04-30 12:56:08.953265 >> Save Feature Maps = False
+2017-04-30 12:56:08.953403 >> Save FMs in a 4D-image = False
+2017-04-30 12:56:08.953558 >> Min/Max Indices of FMs to visualise per pathway-type and per layer = [[], [], [], []]
+2017-04-30 12:56:08.953702 >> Filepaths to save FMs per case = ['/Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/predictions/trainSessionWithValidTinyCnn/features//pred_brats_2013_pat0003_1.nii.gz']
+2017-04-30 12:56:08.953819 >> ~~~~~~~~~~~~~~~~~~Other Generic Parameters~~~~~~~~~~~~~~~~
+2017-04-30 12:56:08.953902 >> ~~Pre Processing~~
+2017-04-30 12:56:08.953996 >> Pad Input Images = True
+2017-04-30 12:56:08.954115 >> ========== Done with printing session's parameters ==========
+2017-04-30 12:56:08.954203 >> =============================================================
+2017-04-30 12:56:08.954285 >> =======================================================
+2017-04-30 12:56:08.954412 >> ============== Training the CNN model =================
+2017-04-30 12:56:08.954518 >> =======================================================
+2017-04-30 12:56:09.197017 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:56:09.197199 >> ~~~~~~~~~~~~~~~~~~~~Starting new Epoch! Epoch #0/2 ~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:56:09.200094 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:56:09.200293 >> **************************************************************************************************
+2017-04-30 12:56:09.200473 >> ************* Starting new Subepoch: #0/2 *************
+2017-04-30 12:56:09.200615 >> **************************************************************************************************
+2017-04-30 12:56:09.200772 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Validation... :=:=:=:=:=:=:=:=:
+2017-04-30 12:56:09.200999 >> Out of [1] subjects given for [Validation], it was specified to extract Segments from maximum [1] per subepoch.
+2017-04-30 12:56:09.201157 >> Shuffled indices of subjects that were randomly chosen: [0]
+2017-04-30 12:56:09.208153 >> SAMPLING: Starting iterations to extract Segments from each subject for next Validation...
+2017-04-30 12:56:09.208377 >> SAMPLING: Going to load the images and extract segments from the subject #1/1
+2017-04-30 12:56:09.208568 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/validation/Arterial_Phase_3_0_B30f_A10Z.nii.gz
+2017-04-30 12:56:11.591295 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2017-04-30 12:56:11.591418 >> Images for subject loaded.
+2017-04-30 12:56:11.652530 >> From subject #0, sampling that many segments of Category [Uniform] : 5000
+2017-04-30 12:56:12.884469 >> Finished sampling segments of Category [Uniform]. Number sampled: 5000
+2017-04-30 12:56:13.060794 >> TIMING: Extracting all the Segments for next Validation took time: 3.660394(s)
+2017-04-30 12:56:13.061080 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Validation. :=:=:=:=:=:=:=:=:
+2017-04-30 12:56:13.103742 >> Loading Validation data for subepoch #0 on shared variable...
+2017-04-30 12:56:13.103976 >> DEBUG: For Validation, loading to shared variable that many Segments: 5000
+2017-04-30 12:56:13.106055 >> TIMING: Loading sharedVariables for Validation in epoch|subepoch=0|0 took time: 0.000335999999999(s)
+2017-04-30 12:56:13.106243 >> PARALLEL: Before Validation in subepoch #0, the parallel job for extracting Segments for the next Training is submitted.
+2017-04-30 12:56:13.145349 >> -V-V-V-V-V- Now Validating for this subepoch before commencing the training iterations... -V-V-V-V-V-
+2017-04-30 12:56:13.145719 >> Validated on 0/100 of the batches for this subepoch...
+2017-04-30 12:56:13.276180 >> Validated on 20/100 of the batches for this subepoch...
+2017-04-30 12:56:13.384111 >> Validated on 40/100 of the batches for this subepoch...
+2017-04-30 12:56:13.487002 >> Validated on 60/100 of the batches for this subepoch...
+2017-04-30 12:56:13.595753 >> Validated on 80/100 of the batches for this subepoch...
+2017-04-30 12:56:13.692438 >> +++++++++++++++++++++++ Reporting Accuracy over whole subepoch +++++++++++++++++++++++
+2017-04-30 12:56:13.692687 >> VALIDATION: Epoch #0, Subepoch #0, Overall:	 mean accuracy:   	0.6788	=> Correctly-Classified-Voxels/All-Predicted-Voxels = 3394/5000
+2017-04-30 12:56:13.695757 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-0 ++++++++ [Whole Foreground (Pos) Vs Background (Neg)] ++++++++++++++++
+2017-04-30 12:56:13.695950 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean accuracy:   	0.6788	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 3394/5000
+2017-04-30 12:56:13.696088 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean sensitivity:	0.4366	=> TruePos/RealPos = 31/71
+2017-04-30 12:56:13.696208 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean specificity:	0.6823	=> TrueNeg/RealNeg = 3363/4929
+2017-04-30 12:56:13.696320 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean Dice:       	0.0372
+2017-04-30 12:56:13.696395 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-1 ++++++++ [This Class (Pos) Vs All Others (Neg)] ++++++++++++++++
+2017-04-30 12:56:13.696595 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean accuracy:   	0.6788	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 3394/5000
+2017-04-30 12:56:13.696750 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean sensitivity:	0.4366	=> TruePos/RealPos = 31/71
+2017-04-30 12:56:13.696898 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean specificity:	0.6823	=> TrueNeg/RealNeg = 3363/4929
+2017-04-30 12:56:13.697031 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean Dice:       	0.0372
+2017-04-30 12:56:13.698501 >> TIMING: Validating on the batches of this subepoch #0 took time: 0.524391(s)
+2017-04-30 12:56:13.698938 >> UPDATE: In this last epoch (cnnTrained) #0 the CNN achieved a new highest mean validation accuracy of: 0.6788
+2017-04-30 12:56:15.223766 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Training... :=:=:=:=:=:=:=:=:
+2017-04-30 12:56:15.223939 >> Out of [1] subjects given for [Training], it was specified to extract Segments from maximum [50] per subepoch.
+2017-04-30 12:56:15.224052 >> Shuffled indices of subjects that were randomly chosen: [0]
+2017-04-30 12:56:15.224420 >> SAMPLING: Starting iterations to extract Segments from each subject for next Training...
+2017-04-30 12:56:15.224539 >> SAMPLING: Going to load the images and extract segments from the subject #1/1
+2017-04-30 12:56:15.224639 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/train/Arterial_Phase_3_0_B30f_A10Z.nii.gz
+2017-04-30 12:56:17.379470 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2017-04-30 12:56:17.379592 >> Images for subject loaded.
+2017-04-30 12:56:17.683531 >> From subject #0, sampling that many segments of Category [Foreground] : 500
+2017-04-30 12:56:18.911879 >> Finished sampling segments of Category [Foreground]. Number sampled: 500
+2017-04-30 12:56:19.102375 >> From subject #0, sampling that many segments of Category [Background] : 500
+2017-04-30 12:56:20.130263 >> Finished sampling segments of Category [Background]. Number sampled: 500
+2017-04-30 12:56:20.269319 >> TIMING: Extracting all the Segments for next Training took time: 4.931697(s)
+2017-04-30 12:56:20.269449 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Training. :=:=:=:=:=:=:=:=:
+2017-04-30 12:56:20.837823 >> Loading Training data for subepoch #0 on shared variable...
+2017-04-30 12:56:20.838083 >> TIMING: Loading sharedVariables for Training in epoch|subepoch=0|0 took time: 0.000103000000001(s)
+2017-04-30 12:56:20.839991 >> PARALLEL: Before Training in subepoch #0, submitting the parallel job for extracting Segments for the next Validation.
+2017-04-30 12:56:20.843709 >> -T-T-T-T-T- Now Training for this subepoch... This may take a few minutes... -T-T-T-T-T-
+2017-04-30 12:56:20.843966 >> Trained on 0/100 of the batches for this subepoch...
+2017-04-30 12:56:20.844262 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Validation... :=:=:=:=:=:=:=:=:
+2017-04-30 12:56:20.845778 >> Out of [1] subjects given for [Validation], it was specified to extract Segments from maximum [1] per subepoch.
+2017-04-30 12:56:20.846014 >> Shuffled indices of subjects that were randomly chosen: [0]
+2017-04-30 12:56:20.846797 >> SAMPLING: Starting iterations to extract Segments from each subject for next Validation...
+2017-04-30 12:56:20.846949 >> SAMPLING: Going to load the images and extract segments from the subject #1/1
+2017-04-30 12:56:20.847033 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/validation/Arterial_Phase_3_0_B30f_A10Z.nii.gz
+2017-04-30 12:56:23.274765 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2017-04-30 12:56:23.276279 >> Images for subject loaded.
+2017-04-30 12:56:23.341264 >> From subject #0, sampling that many segments of Category [Uniform] : 5000
+2017-04-30 12:56:24.766026 >> Finished sampling segments of Category [Uniform]. Number sampled: 5000
+2017-04-30 12:56:25.055037 >> TIMING: Extracting all the Segments for next Validation took time: 3.849537(s)
+2017-04-30 12:56:25.055291 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Validation. :=:=:=:=:=:=:=:=:
+2017-04-30 12:56:28.439219 >> Trained on 20/100 of the batches for this subepoch...
+2017-04-30 12:56:34.698711 >> Trained on 40/100 of the batches for this subepoch...
+2017-04-30 12:56:40.970420 >> Trained on 60/100 of the batches for this subepoch...
+2017-04-30 12:56:47.154148 >> Trained on 80/100 of the batches for this subepoch...
+2017-04-30 12:56:53.397642 >> +++++++++++++++++++++++ Reporting Accuracy over whole subepoch +++++++++++++++++++++++
+2017-04-30 12:56:53.399078 >> TRAINING: Epoch #0, Subepoch #0, Overall:	 mean accuracy:   	0.7561	=> Correctly-Classified-Voxels/All-Predicted-Voxels = 5185805/6859000
+2017-04-30 12:56:53.401088 >> TRAINING: Epoch #0, Subepoch #0, Overall:	 mean cost:      	0.64881
+2017-04-30 12:56:53.401362 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-0 ++++++++ [Whole Foreground (Pos) Vs Background (Neg)] ++++++++++++++++
+2017-04-30 12:56:53.401670 >> TRAINING: Epoch #0, Subepoch #0, Class-0:	 mean accuracy:   	0.7561	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 5185805/6859000
+2017-04-30 12:56:53.401977 >> TRAINING: Epoch #0, Subepoch #0, Class-0:	 mean sensitivity:	0.7862	=> TruePos/RealPos = 447352/568997
+2017-04-30 12:56:53.402247 >> TRAINING: Epoch #0, Subepoch #0, Class-0:	 mean specificity:	0.7533	=> TrueNeg/RealNeg = 4738453/6290003
+2017-04-30 12:56:53.402517 >> TRAINING: Epoch #0, Subepoch #0, Class-0:	 mean Dice:       	0.3484
+2017-04-30 12:56:53.402751 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-1 ++++++++ [This Class (Pos) Vs All Others (Neg)] ++++++++++++++++
+2017-04-30 12:56:53.402972 >> TRAINING: Epoch #0, Subepoch #0, Class-1:	 mean accuracy:   	0.7561	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 5185805/6859000
+2017-04-30 12:56:53.403176 >> TRAINING: Epoch #0, Subepoch #0, Class-1:	 mean sensitivity:	0.7862	=> TruePos/RealPos = 447352/568997
+2017-04-30 12:56:53.403397 >> TRAINING: Epoch #0, Subepoch #0, Class-1:	 mean specificity:	0.7533	=> TrueNeg/RealNeg = 4738453/6290003
+2017-04-30 12:56:53.403678 >> TRAINING: Epoch #0, Subepoch #0, Class-1:	 mean Dice:       	0.3484
+2017-04-30 12:56:53.404002 >> TIMING: Training on the batches of this subepoch #0 took time: 34.956588(s)
+2017-04-30 12:56:53.404195 >> **************************************************************************************************
+2017-04-30 12:56:53.404353 >> ************* Starting new Subepoch: #1/2 *************
+2017-04-30 12:56:53.404500 >> **************************************************************************************************
+2017-04-30 12:56:53.409799 >> Loading Validation data for subepoch #1 on shared variable...
+2017-04-30 12:56:53.409971 >> DEBUG: For Validation, loading to shared variable that many Segments: 5000
+2017-04-30 12:56:53.412001 >> TIMING: Loading sharedVariables for Validation in epoch|subepoch=0|1 took time: 0.000233999999999(s)
+2017-04-30 12:56:53.412201 >> PARALLEL: Before Validation in subepoch #1, the parallel job for extracting Segments for the next Training is submitted.
+2017-04-30 12:56:53.434697 >> -V-V-V-V-V- Now Validating for this subepoch before commencing the training iterations... -V-V-V-V-V-
+2017-04-30 12:56:53.434945 >> Validated on 0/100 of the batches for this subepoch...
+2017-04-30 12:56:53.467484 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Training... :=:=:=:=:=:=:=:=:
+2017-04-30 12:56:53.467650 >> Out of [1] subjects given for [Training], it was specified to extract Segments from maximum [50] per subepoch.
+2017-04-30 12:56:53.469379 >> Shuffled indices of subjects that were randomly chosen: [0]
+2017-04-30 12:56:53.469666 >> SAMPLING: Starting iterations to extract Segments from each subject for next Training...
+2017-04-30 12:56:53.469762 >> SAMPLING: Going to load the images and extract segments from the subject #1/1
+2017-04-30 12:56:53.473698 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/train/Arterial_Phase_3_0_B30f_A10Z.nii.gz
+2017-04-30 12:56:53.528962 >> Validated on 20/100 of the batches for this subepoch...
+2017-04-30 12:56:53.619918 >> Validated on 40/100 of the batches for this subepoch...
+2017-04-30 12:56:53.715175 >> Validated on 60/100 of the batches for this subepoch...
+2017-04-30 12:56:53.811783 >> Validated on 80/100 of the batches for this subepoch...
+2017-04-30 12:56:53.908492 >> +++++++++++++++++++++++ Reporting Accuracy over whole subepoch +++++++++++++++++++++++
+2017-04-30 12:56:53.908724 >> VALIDATION: Epoch #0, Subepoch #1, Overall:	 mean accuracy:   	0.9354	=> Correctly-Classified-Voxels/All-Predicted-Voxels = 4677/5000
+2017-04-30 12:56:53.910523 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-0 ++++++++ [Whole Foreground (Pos) Vs Background (Neg)] ++++++++++++++++
+2017-04-30 12:56:53.910821 >> VALIDATION: Epoch #0, Subepoch #1, Class-0:	 mean accuracy:   	0.9354	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 4677/5000
+2017-04-30 12:56:53.911106 >> VALIDATION: Epoch #0, Subepoch #1, Class-0:	 mean sensitivity:	1.0000	=> TruePos/RealPos = 65/65
+2017-04-30 12:56:53.911256 >> VALIDATION: Epoch #0, Subepoch #1, Class-0:	 mean specificity:	0.9345	=> TrueNeg/RealNeg = 4612/4935
+2017-04-30 12:56:53.911372 >> VALIDATION: Epoch #0, Subepoch #1, Class-0:	 mean Dice:       	0.2870
+2017-04-30 12:56:53.911465 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-1 ++++++++ [This Class (Pos) Vs All Others (Neg)] ++++++++++++++++
+2017-04-30 12:56:53.911659 >> VALIDATION: Epoch #0, Subepoch #1, Class-1:	 mean accuracy:   	0.9354	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 4677/5000
+2017-04-30 12:56:53.911831 >> VALIDATION: Epoch #0, Subepoch #1, Class-1:	 mean sensitivity:	1.0000	=> TruePos/RealPos = 65/65
+2017-04-30 12:56:53.912013 >> VALIDATION: Epoch #0, Subepoch #1, Class-1:	 mean specificity:	0.9345	=> TrueNeg/RealNeg = 4612/4935
+2017-04-30 12:56:53.912159 >> VALIDATION: Epoch #0, Subepoch #1, Class-1:	 mean Dice:       	0.2870
+2017-04-30 12:56:53.912499 >> TIMING: Validating on the batches of this subepoch #1 took time: 0.468849(s)
+2017-04-30 12:56:53.912842 >> UPDATE: In this last epoch (cnnTrained) #0 the CNN achieved a new highest mean validation accuracy of: 0.8071
+2017-04-30 12:56:55.527579 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2017-04-30 12:56:55.527701 >> Images for subject loaded.
+2017-04-30 12:56:55.792950 >> From subject #0, sampling that many segments of Category [Foreground] : 500
+2017-04-30 12:56:56.932059 >> Finished sampling segments of Category [Foreground]. Number sampled: 500
+2017-04-30 12:56:57.062054 >> From subject #0, sampling that many segments of Category [Background] : 500
+2017-04-30 12:56:58.098562 >> Finished sampling segments of Category [Background]. Number sampled: 500
+2017-04-30 12:56:58.162767 >> TIMING: Extracting all the Segments for next Training took time: 4.55738(s)
+2017-04-30 12:56:58.162906 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Training. :=:=:=:=:=:=:=:=:
+2017-04-30 12:56:58.722585 >> Loading Training data for subepoch #1 on shared variable...
+2017-04-30 12:56:58.722776 >> TIMING: Loading sharedVariables for Training in epoch|subepoch=0|1 took time: 5.69999999982e-05(s)
+2017-04-30 12:56:58.724730 >> PARALLEL: Before Training in subepoch #1, submitting the parallel job for extracting Segments for the next Validation.
+2017-04-30 12:56:58.727277 >> -T-T-T-T-T- Now Training for this subepoch... This may take a few minutes... -T-T-T-T-T-
+2017-04-30 12:56:58.727488 >> Trained on 0/100 of the batches for this subepoch...
+2017-04-30 12:56:58.729775 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Validation... :=:=:=:=:=:=:=:=:
+2017-04-30 12:56:58.730001 >> Out of [1] subjects given for [Validation], it was specified to extract Segments from maximum [1] per subepoch.
+2017-04-30 12:56:58.730080 >> Shuffled indices of subjects that were randomly chosen: [0]
+2017-04-30 12:56:58.730369 >> SAMPLING: Starting iterations to extract Segments from each subject for next Validation...
+2017-04-30 12:56:58.730448 >> SAMPLING: Going to load the images and extract segments from the subject #1/1
+2017-04-30 12:56:58.730546 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/validation/Arterial_Phase_3_0_B30f_A10Z.nii.gz
+2017-04-30 12:57:01.224122 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2017-04-30 12:57:01.224322 >> Images for subject loaded.
+2017-04-30 12:57:01.276500 >> From subject #0, sampling that many segments of Category [Uniform] : 5000
+2017-04-30 12:57:02.606457 >> Finished sampling segments of Category [Uniform]. Number sampled: 5000
+2017-04-30 12:57:02.771355 >> TIMING: Extracting all the Segments for next Validation took time: 3.6468(s)
+2017-04-30 12:57:02.771498 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Validation. :=:=:=:=:=:=:=:=:
+2017-04-30 12:57:05.975427 >> Trained on 20/100 of the batches for this subepoch...
+2017-04-30 12:57:12.179101 >> Trained on 40/100 of the batches for this subepoch...
+2017-04-30 12:57:18.420241 >> Trained on 60/100 of the batches for this subepoch...
+2017-04-30 12:57:24.590298 >> Trained on 80/100 of the batches for this subepoch...
+2017-04-30 12:57:30.772980 >> +++++++++++++++++++++++ Reporting Accuracy over whole subepoch +++++++++++++++++++++++
+2017-04-30 12:57:30.773210 >> TRAINING: Epoch #0, Subepoch #1, Overall:	 mean accuracy:   	0.9261	=> Correctly-Classified-Voxels/All-Predicted-Voxels = 6351972/6859000
+2017-04-30 12:57:30.777761 >> TRAINING: Epoch #0, Subepoch #1, Overall:	 mean cost:      	0.43983
+2017-04-30 12:57:30.777920 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-0 ++++++++ [Whole Foreground (Pos) Vs Background (Neg)] ++++++++++++++++
+2017-04-30 12:57:30.778386 >> TRAINING: Epoch #0, Subepoch #1, Class-0:	 mean accuracy:   	0.9261	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 6351972/6859000
+2017-04-30 12:57:30.778644 >> TRAINING: Epoch #0, Subepoch #1, Class-0:	 mean sensitivity:	0.7737	=> TruePos/RealPos = 446168/576703
+2017-04-30 12:57:30.778994 >> TRAINING: Epoch #0, Subepoch #1, Class-0:	 mean specificity:	0.9401	=> TrueNeg/RealNeg = 5905804/6282297
+2017-04-30 12:57:30.779213 >> TRAINING: Epoch #0, Subepoch #1, Class-0:	 mean Dice:       	0.6377
+2017-04-30 12:57:30.779428 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-1 ++++++++ [This Class (Pos) Vs All Others (Neg)] ++++++++++++++++
+2017-04-30 12:57:30.779653 >> TRAINING: Epoch #0, Subepoch #1, Class-1:	 mean accuracy:   	0.9261	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 6351972/6859000
+2017-04-30 12:57:30.779881 >> TRAINING: Epoch #0, Subepoch #1, Class-1:	 mean sensitivity:	0.7737	=> TruePos/RealPos = 446168/576703
+2017-04-30 12:57:30.780145 >> TRAINING: Epoch #0, Subepoch #1, Class-1:	 mean specificity:	0.9401	=> TrueNeg/RealNeg = 5905804/6282297
+2017-04-30 12:57:30.780352 >> TRAINING: Epoch #0, Subepoch #1, Class-1:	 mean Dice:       	0.6377
+2017-04-30 12:57:30.780911 >> TIMING: Training on the batches of this subepoch #1 took time: 34.595452(s)
+2017-04-30 12:57:30.781159 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:57:30.784651 >> ~~~~~~~~~~~~~~~~~~ Epoch #0 finished. Reporting Accuracy over whole epoch. ~~~~~~~~~~~~~~~~~~
+2017-04-30 12:57:30.784974 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:57:30.785277 >> ( >>>>>>>>>>>>>>>>>>>> Reporting Accuracy over whole epoch <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:57:30.785596 >> VALIDATION: Epoch #0, Overall:	 mean accuracy of epoch:	0.8071	=> Correctly-Classified-Voxels/All-Predicted-Voxels
+2017-04-30 12:57:30.785943 >> VALIDATION: Epoch #0, Overall:	 mean accuracy of each subepoch:	[ 0.6788 0.9354 ]
+2017-04-30 12:57:30.786138 >> >>>>>>>>>>>> Reporting Accuracy over whole epoch for Class-0 >>>>>>>>> [Whole Foreground (Pos) Vs Background (Neg)] <<<<<<<<<<<<<
+2017-04-30 12:57:30.786397 >> VALIDATION: Epoch #0, Class-0:	 mean accuracy of epoch:	0.8071	=> (TruePos+TrueNeg)/All-Predicted-Voxels
+2017-04-30 12:57:30.786648 >> VALIDATION: Epoch #0, Class-0:	 mean sensitivity of epoch:	0.7183	=> TruePos/RealPos
+2017-04-30 12:57:30.786832 >> VALIDATION: Epoch #0, Class-0:	 mean specificity of epoch:	0.8084	=> TrueNeg/RealNeg
+2017-04-30 12:57:30.787096 >> VALIDATION: Epoch #0, Class-0:	 mean Dice of epoch:    	0.1621
+2017-04-30 12:57:30.787405 >> VALIDATION: Epoch #0, Class-0:	 mean accuracy of each subepoch:	[ 0.6788 0.9354 ]
+2017-04-30 12:57:30.787593 >> VALIDATION: Epoch #0, Class-0:	 mean sensitivity of each subepoch:	[ 0.4366 1.0000 ]
+2017-04-30 12:57:30.787827 >> VALIDATION: Epoch #0, Class-0:	 mean specificity of each subepoch:	[ 0.6823 0.9345 ]
+2017-04-30 12:57:30.788155 >> VALIDATION: Epoch #0, Class-0:	 mean Dice of each subepoch:    	[ 0.0372 0.2870 ]
+2017-04-30 12:57:30.788347 >> >>>>>>>>>>>> Reporting Accuracy over whole epoch for Class-1 >>>>>>>>> [This Class (Pos) Vs All Others (Neg)] <<<<<<<<<<<<<
+2017-04-30 12:57:30.788643 >> VALIDATION: Epoch #0, Class-1:	 mean accuracy of epoch:	0.8071	=> (TruePos+TrueNeg)/All-Predicted-Voxels
+2017-04-30 12:57:30.788883 >> VALIDATION: Epoch #0, Class-1:	 mean sensitivity of epoch:	0.7183	=> TruePos/RealPos
+2017-04-30 12:57:30.789125 >> VALIDATION: Epoch #0, Class-1:	 mean specificity of epoch:	0.8084	=> TrueNeg/RealNeg
+2017-04-30 12:57:30.789408 >> VALIDATION: Epoch #0, Class-1:	 mean Dice of epoch:    	0.1621
+2017-04-30 12:57:30.789591 >> VALIDATION: Epoch #0, Class-1:	 mean accuracy of each subepoch:	[ 0.6788 0.9354 ]
+2017-04-30 12:57:30.789754 >> VALIDATION: Epoch #0, Class-1:	 mean sensitivity of each subepoch:	[ 0.4366 1.0000 ]
+2017-04-30 12:57:30.789889 >> VALIDATION: Epoch #0, Class-1:	 mean specificity of each subepoch:	[ 0.6823 0.9345 ]
+2017-04-30 12:57:30.790207 >> VALIDATION: Epoch #0, Class-1:	 mean Dice of each subepoch:    	[ 0.0372 0.2870 ]
+2017-04-30 12:57:30.790422 >> >>>>>>>>>>>>>>>>>>>>>>>>> End Of Accuracy Report at the end of Epoch <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:57:30.790593 >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:57:30.790873 >> ( >>>>>>>>>>>>>>>>>>>> Reporting Accuracy over whole epoch <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:57:30.791199 >> TRAINING: Epoch #0, Overall:	 mean accuracy of epoch:	0.8411	=> Correctly-Classified-Voxels/All-Predicted-Voxels
+2017-04-30 12:57:30.791512 >> TRAINING: Epoch #0, Overall:	 mean cost of epoch:    	0.54432
+2017-04-30 12:57:30.791761 >> TRAINING: Epoch #0, Overall:	 mean accuracy of each subepoch:	[ 0.7561 0.9261 ]
+2017-04-30 12:57:30.792072 >> TRAINING: Epoch #0, Overall:	 mean cost of each subepoch:    	[ 0.64881 0.43983 ]
+2017-04-30 12:57:30.792312 >> >>>>>>>>>>>> Reporting Accuracy over whole epoch for Class-0 >>>>>>>>> [Whole Foreground (Pos) Vs Background (Neg)] <<<<<<<<<<<<<
+2017-04-30 12:57:30.792608 >> TRAINING: Epoch #0, Class-0:	 mean accuracy of epoch:	0.8411	=> (TruePos+TrueNeg)/All-Predicted-Voxels
+2017-04-30 12:57:30.792944 >> TRAINING: Epoch #0, Class-0:	 mean sensitivity of epoch:	0.7799	=> TruePos/RealPos
+2017-04-30 12:57:30.793184 >> TRAINING: Epoch #0, Class-0:	 mean specificity of epoch:	0.8467	=> TrueNeg/RealNeg
+2017-04-30 12:57:30.793444 >> TRAINING: Epoch #0, Class-0:	 mean Dice of epoch:    	0.4930
+2017-04-30 12:57:30.793675 >> TRAINING: Epoch #0, Class-0:	 mean accuracy of each subepoch:	[ 0.7561 0.9261 ]
+2017-04-30 12:57:30.793854 >> TRAINING: Epoch #0, Class-0:	 mean sensitivity of each subepoch:	[ 0.7862 0.7737 ]
+2017-04-30 12:57:30.794102 >> TRAINING: Epoch #0, Class-0:	 mean specificity of each subepoch:	[ 0.7533 0.9401 ]
+2017-04-30 12:57:30.794243 >> TRAINING: Epoch #0, Class-0:	 mean Dice of each subepoch:    	[ 0.3484 0.6377 ]
+2017-04-30 12:57:30.794416 >> >>>>>>>>>>>> Reporting Accuracy over whole epoch for Class-1 >>>>>>>>> [This Class (Pos) Vs All Others (Neg)] <<<<<<<<<<<<<
+2017-04-30 12:57:30.794713 >> TRAINING: Epoch #0, Class-1:	 mean accuracy of epoch:	0.8411	=> (TruePos+TrueNeg)/All-Predicted-Voxels
+2017-04-30 12:57:30.794904 >> TRAINING: Epoch #0, Class-1:	 mean sensitivity of epoch:	0.7799	=> TruePos/RealPos
+2017-04-30 12:57:30.795060 >> TRAINING: Epoch #0, Class-1:	 mean specificity of epoch:	0.8467	=> TrueNeg/RealNeg
+2017-04-30 12:57:30.795204 >> TRAINING: Epoch #0, Class-1:	 mean Dice of epoch:    	0.4930
+2017-04-30 12:57:30.795347 >> TRAINING: Epoch #0, Class-1:	 mean accuracy of each subepoch:	[ 0.7561 0.9261 ]
+2017-04-30 12:57:30.795569 >> TRAINING: Epoch #0, Class-1:	 mean sensitivity of each subepoch:	[ 0.7862 0.7737 ]
+2017-04-30 12:57:30.795784 >> TRAINING: Epoch #0, Class-1:	 mean specificity of each subepoch:	[ 0.7533 0.9401 ]
+2017-04-30 12:57:30.795961 >> TRAINING: Epoch #0, Class-1:	 mean Dice of each subepoch:    	[ 0.3484 0.6377 ]
+2017-04-30 12:57:30.796196 >> >>>>>>>>>>>>>>>>>>>>>>>>> End Of Accuracy Report at the end of Epoch <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:57:30.796368 >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:57:30.796563 >> SAVING: Epoch #0 finished. Saving CNN model.
+2017-04-30 12:57:30.797123 >> Saving network to: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/cnnModels/trainSessionWithValidTinyCnn/tinyCnn.trainSessionWithValidTinyCnn.2017-04-30.12.57.30.796655.save
+2017-04-30 12:57:33.104613 >> Model saved.
+2017-04-30 12:57:33.104762 >> TIMING: The whole Epoch #0 took time: 77.066493(s)
+2017-04-30 12:57:33.106914 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ End of Training Epoch. Model was Saved. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:57:33.107111 >> ***Starting validation with Full Inference / Segmentation on validation subjects for Epoch #0...***
+2017-04-30 12:57:33.107254 >> ###########################################################################################################
+2017-04-30 12:57:33.107398 >> ############################# Starting full Segmentation of Validation subjects ##########################
+2017-04-30 12:57:33.107584 >> ###########################################################################################################
+2017-04-30 12:57:33.107838 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:57:33.107978 >> ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:57:33.108092 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/validation/Arterial_Phase_3_0_B30f_A10Z.nii.gz
+2017-04-30 12:57:35.356560 >> Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2017-04-30 12:57:35.396465 >> Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2017-04-30 12:57:35.396683 >> Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2017-04-30 12:57:35.398697 >> Total number of Segments to process:280
+2017-04-30 12:57:35.398910 >> Processed 0/280 Segments.
+2017-04-30 12:57:38.010546 >> Processed 50/280 Segments.
+2017-04-30 12:57:40.577552 >> Processed 100/280 Segments.
+2017-04-30 12:57:43.153933 >> Processed 150/280 Segments.
+2017-04-30 12:57:45.664320 >> Processed 200/280 Segments.
+2017-04-30 12:57:48.193515 >> Processed 250/280 Segments.
+2017-04-30 12:57:49.687099 >> TIMING: Segmentation of this subject: [Extracting:] 0.069773 [Loading:] 0.001183 [ForwardPass:] 16.226379 [Total:] 16.297335(s)
+2017-04-30 12:57:50.299430 >> Saving the new label (segmentation) image for the subject #0
+2017-04-30 12:57:50.879496 >> Image saved at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/predictions/trainSessionWithValidTinyCnn/predictions/pred_brats_2013_pat0003_1_Segm.nii.gz
+2017-04-30 12:57:50.879729 >> Saving the new label (segmentation) image for the subject #0
+2017-04-30 12:57:54.234293 >> Image saved at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/predictions/trainSessionWithValidTinyCnn/predictions/pred_brats_2013_pat0003_1_ProbMapClass0.nii.gz
+2017-04-30 12:57:54.234515 >> Saving the new label (segmentation) image for the subject #0
+2017-04-30 12:57:58.065127 >> Image saved at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/predictions/trainSessionWithValidTinyCnn/predictions/pred_brats_2013_pat0003_1_ProbMapClass1.nii.gz
+2017-04-30 12:57:58.066730 >> +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #0 ++++++++++++++++++++++++++
+2017-04-30 12:57:59.346959 >> ACCURACY: (Validation) The Per-Class DICE Coefficients for subject with index #0 equal: DICE1=[ 0.3835 0.3835 ] DICE2=[ 0.3905 0.3905 ] DICE3=[ 0.3905 0.3905 ]
+2017-04-30 12:57:59.347199 >> EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0 we calculate DICE for the whole foreground (useful for multi-class problems).
+2017-04-30 12:57:59.348985 >> EXPLANATION: DICE1 is calculated whole segmentation vs whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
+2017-04-30 12:57:59.349151 >> +++++++++++++++++++++++++++++++ Segmentation of all subjects finished +++++++++++++++++++++++++++++++++++
+2017-04-30 12:57:59.349284 >> +++++++++++++++++++++ Reporting Average Segmentation Metrics over all subjects ++++++++++++++++++++++++++
+2017-04-30 12:57:59.349455 >> ACCURACY: (Validation) The Per-Class average DICE Coefficients over all subjects are: DICE1=[ 0.3835 0.3835 ] DICE2=[ 0.3905 0.3905 ] DICE3=[ 0.3905 0.3905 ]
+2017-04-30 12:57:59.349561 >> EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0 we calculate DICE for the whole foreground (useful for multi-class problems).
+2017-04-30 12:57:59.349720 >> EXPLANATION: DICE1 is calculated whole segmentation vs whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
+2017-04-30 12:57:59.349841 >> TIMING: Validation process took time: 28.41177(s)
+2017-04-30 12:57:59.349945 >> ###########################################################################################################
+2017-04-30 12:57:59.350064 >> ############################# Finished full Segmentation of Validation subjects ##########################
+2017-04-30 12:57:59.350212 >> ###########################################################################################################
+2017-04-30 12:57:59.440545 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:57:59.440731 >> ~~~~~~~~~~~~~~~~~~~~Starting new Epoch! Epoch #1/2 ~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:57:59.445370 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:57:59.445598 >> **************************************************************************************************
+2017-04-30 12:57:59.445770 >> ************* Starting new Subepoch: #0/2 *************
+2017-04-30 12:57:59.445871 >> **************************************************************************************************
+2017-04-30 12:57:59.476573 >> Loading Validation data for subepoch #0 on shared variable...
+2017-04-30 12:57:59.476759 >> DEBUG: For Validation, loading to shared variable that many Segments: 5000
+2017-04-30 12:57:59.478621 >> TIMING: Loading sharedVariables for Validation in epoch|subepoch=1|0 took time: 0.000219999999999(s)
+2017-04-30 12:57:59.478697 >> PARALLEL: Before Validation in subepoch #0, the parallel job for extracting Segments for the next Training is submitted.
+2017-04-30 12:57:59.512128 >> -V-V-V-V-V- Now Validating for this subepoch before commencing the training iterations... -V-V-V-V-V-
+2017-04-30 12:57:59.512344 >> Validated on 0/100 of the batches for this subepoch...
+2017-04-30 12:57:59.539758 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Training... :=:=:=:=:=:=:=:=:
+2017-04-30 12:57:59.539927 >> Out of [1] subjects given for [Training], it was specified to extract Segments from maximum [50] per subepoch.
+2017-04-30 12:57:59.541860 >> Shuffled indices of subjects that were randomly chosen: [0]
+2017-04-30 12:57:59.542249 >> SAMPLING: Starting iterations to extract Segments from each subject for next Training...
+2017-04-30 12:57:59.542357 >> SAMPLING: Going to load the images and extract segments from the subject #1/1
+2017-04-30 12:57:59.542495 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/train/Arterial_Phase_3_0_B30f_A10Z.nii.gz
+2017-04-30 12:57:59.609283 >> Validated on 20/100 of the batches for this subepoch...
+2017-04-30 12:57:59.698562 >> Validated on 40/100 of the batches for this subepoch...
+2017-04-30 12:57:59.805945 >> Validated on 60/100 of the batches for this subepoch...
+2017-04-30 12:57:59.901783 >> Validated on 80/100 of the batches for this subepoch...
+2017-04-30 12:57:59.998878 >> +++++++++++++++++++++++ Reporting Accuracy over whole subepoch +++++++++++++++++++++++
+2017-04-30 12:57:59.999116 >> VALIDATION: Epoch #1, Subepoch #0, Overall:	 mean accuracy:   	0.9656	=> Correctly-Classified-Voxels/All-Predicted-Voxels = 4828/5000
+2017-04-30 12:58:00.000939 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-0 ++++++++ [Whole Foreground (Pos) Vs Background (Neg)] ++++++++++++++++
+2017-04-30 12:58:00.001191 >> VALIDATION: Epoch #1, Subepoch #0, Class-0:	 mean accuracy:   	0.9656	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 4828/5000
+2017-04-30 12:58:00.001399 >> VALIDATION: Epoch #1, Subepoch #0, Class-0:	 mean sensitivity:	0.9200	=> TruePos/RealPos = 69/75
+2017-04-30 12:58:00.001643 >> VALIDATION: Epoch #1, Subepoch #0, Class-0:	 mean specificity:	0.9663	=> TrueNeg/RealNeg = 4759/4925
+2017-04-30 12:58:00.001799 >> VALIDATION: Epoch #1, Subepoch #0, Class-0:	 mean Dice:       	0.4452
+2017-04-30 12:58:00.001934 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-1 ++++++++ [This Class (Pos) Vs All Others (Neg)] ++++++++++++++++
+2017-04-30 12:58:00.002098 >> VALIDATION: Epoch #1, Subepoch #0, Class-1:	 mean accuracy:   	0.9656	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 4828/5000
+2017-04-30 12:58:00.002272 >> VALIDATION: Epoch #1, Subepoch #0, Class-1:	 mean sensitivity:	0.9200	=> TruePos/RealPos = 69/75
+2017-04-30 12:58:00.002454 >> VALIDATION: Epoch #1, Subepoch #0, Class-1:	 mean specificity:	0.9663	=> TrueNeg/RealNeg = 4759/4925
+2017-04-30 12:58:00.002656 >> VALIDATION: Epoch #1, Subepoch #0, Class-1:	 mean Dice:       	0.4452
+2017-04-30 12:58:00.003029 >> TIMING: Validating on the batches of this subepoch #0 took time: 0.484112(s)
+2017-04-30 12:58:00.003357 >> UPDATE: In this last epoch (cnnTrained) #1 the CNN achieved a new highest mean validation accuracy of: 0.9656
+2017-04-30 12:58:01.630145 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2017-04-30 12:58:01.630262 >> Images for subject loaded.
+2017-04-30 12:58:01.868033 >> From subject #0, sampling that many segments of Category [Foreground] : 500
+2017-04-30 12:58:03.002401 >> Finished sampling segments of Category [Foreground]. Number sampled: 500
+2017-04-30 12:58:03.117091 >> From subject #0, sampling that many segments of Category [Background] : 500
+2017-04-30 12:58:04.134610 >> Finished sampling segments of Category [Background]. Number sampled: 500
+2017-04-30 12:58:04.186420 >> TIMING: Extracting all the Segments for next Training took time: 4.538847(s)
+2017-04-30 12:58:04.186540 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Training. :=:=:=:=:=:=:=:=:
+2017-04-30 12:58:04.695431 >> Loading Training data for subepoch #0 on shared variable...
+2017-04-30 12:58:04.695764 >> TIMING: Loading sharedVariables for Training in epoch|subepoch=1|0 took time: 6.99999999938e-05(s)
+2017-04-30 12:58:04.697522 >> PARALLEL: Before Training in subepoch #0, submitting the parallel job for extracting Segments for the next Validation.
+2017-04-30 12:58:04.699857 >> -T-T-T-T-T- Now Training for this subepoch... This may take a few minutes... -T-T-T-T-T-
+2017-04-30 12:58:04.700062 >> Trained on 0/100 of the batches for this subepoch...
+2017-04-30 12:58:04.703926 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Validation... :=:=:=:=:=:=:=:=:
+2017-04-30 12:58:04.705954 >> Out of [1] subjects given for [Validation], it was specified to extract Segments from maximum [1] per subepoch.
+2017-04-30 12:58:04.709266 >> Shuffled indices of subjects that were randomly chosen: [0]
+2017-04-30 12:58:04.711749 >> SAMPLING: Starting iterations to extract Segments from each subject for next Validation...
+2017-04-30 12:58:04.713810 >> SAMPLING: Going to load the images and extract segments from the subject #1/1
+2017-04-30 12:58:04.714003 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/validation/Arterial_Phase_3_0_B30f_A10Z.nii.gz
+2017-04-30 12:58:07.144881 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2017-04-30 12:58:07.145039 >> Images for subject loaded.
+2017-04-30 12:58:07.213371 >> From subject #0, sampling that many segments of Category [Uniform] : 5000
+2017-04-30 12:58:08.499446 >> Finished sampling segments of Category [Uniform]. Number sampled: 5000
+2017-04-30 12:58:08.697822 >> TIMING: Extracting all the Segments for next Validation took time: 3.68815(s)
+2017-04-30 12:58:08.698037 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Validation. :=:=:=:=:=:=:=:=:
+2017-04-30 12:58:11.937466 >> Trained on 20/100 of the batches for this subepoch...
+2017-04-30 12:58:18.812984 >> Trained on 40/100 of the batches for this subepoch...
+2017-04-30 12:58:25.032374 >> Trained on 60/100 of the batches for this subepoch...
+2017-04-30 12:58:31.307926 >> Trained on 80/100 of the batches for this subepoch...
+2017-04-30 12:58:37.614124 >> +++++++++++++++++++++++ Reporting Accuracy over whole subepoch +++++++++++++++++++++++
+2017-04-30 12:58:37.614343 >> TRAINING: Epoch #1, Subepoch #0, Overall:	 mean accuracy:   	0.9435	=> Correctly-Classified-Voxels/All-Predicted-Voxels = 6471324/6859000
+2017-04-30 12:58:37.616265 >> TRAINING: Epoch #1, Subepoch #0, Overall:	 mean cost:      	0.32533
+2017-04-30 12:58:37.616475 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-0 ++++++++ [Whole Foreground (Pos) Vs Background (Neg)] ++++++++++++++++
+2017-04-30 12:58:37.616769 >> TRAINING: Epoch #1, Subepoch #0, Class-0:	 mean accuracy:   	0.9435	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 6471324/6859000
+2017-04-30 12:58:37.616975 >> TRAINING: Epoch #1, Subepoch #0, Class-0:	 mean sensitivity:	0.6591	=> TruePos/RealPos = 384345/583147
+2017-04-30 12:58:37.617119 >> TRAINING: Epoch #1, Subepoch #0, Class-0:	 mean specificity:	0.9699	=> TrueNeg/RealNeg = 6086979/6275853
+2017-04-30 12:58:37.617226 >> TRAINING: Epoch #1, Subepoch #0, Class-0:	 mean Dice:       	0.6647
+2017-04-30 12:58:37.617382 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-1 ++++++++ [This Class (Pos) Vs All Others (Neg)] ++++++++++++++++
+2017-04-30 12:58:37.617545 >> TRAINING: Epoch #1, Subepoch #0, Class-1:	 mean accuracy:   	0.9435	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 6471324/6859000
+2017-04-30 12:58:37.617745 >> TRAINING: Epoch #1, Subepoch #0, Class-1:	 mean sensitivity:	0.6591	=> TruePos/RealPos = 384345/583147
+2017-04-30 12:58:37.617922 >> TRAINING: Epoch #1, Subepoch #0, Class-1:	 mean specificity:	0.9699	=> TrueNeg/RealNeg = 6086979/6275853
+2017-04-30 12:58:37.618016 >> TRAINING: Epoch #1, Subepoch #0, Class-1:	 mean Dice:       	0.6647
+2017-04-30 12:58:37.618487 >> TIMING: Training on the batches of this subepoch #0 took time: 35.268859(s)
+2017-04-30 12:58:37.618611 >> **************************************************************************************************
+2017-04-30 12:58:37.618756 >> ************* Starting new Subepoch: #1/2 *************
+2017-04-30 12:58:37.618882 >> **************************************************************************************************
+2017-04-30 12:58:37.623968 >> Loading Validation data for subepoch #1 on shared variable...
+2017-04-30 12:58:37.624152 >> DEBUG: For Validation, loading to shared variable that many Segments: 5000
+2017-04-30 12:58:37.626150 >> TIMING: Loading sharedVariables for Validation in epoch|subepoch=1|1 took time: 0.000248999999997(s)
+2017-04-30 12:58:37.626261 >> PARALLEL: Before Validation in subepoch #1, the parallel job for extracting Segments for the next Training is submitted.
+2017-04-30 12:58:37.650631 >> -V-V-V-V-V- Now Validating for this subepoch before commencing the training iterations... -V-V-V-V-V-
+2017-04-30 12:58:37.650828 >> Validated on 0/100 of the batches for this subepoch...
+2017-04-30 12:58:37.680788 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Training... :=:=:=:=:=:=:=:=:
+2017-04-30 12:58:37.680930 >> Out of [1] subjects given for [Training], it was specified to extract Segments from maximum [50] per subepoch.
+2017-04-30 12:58:37.682777 >> Shuffled indices of subjects that were randomly chosen: [0]
+2017-04-30 12:58:37.683100 >> SAMPLING: Starting iterations to extract Segments from each subject for next Training...
+2017-04-30 12:58:37.683244 >> SAMPLING: Going to load the images and extract segments from the subject #1/1
+2017-04-30 12:58:37.683346 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/train/Arterial_Phase_3_0_B30f_A10Z.nii.gz
+2017-04-30 12:58:37.745281 >> Validated on 20/100 of the batches for this subepoch...
+2017-04-30 12:58:37.832357 >> Validated on 40/100 of the batches for this subepoch...
+2017-04-30 12:58:37.960024 >> Validated on 60/100 of the batches for this subepoch...
+2017-04-30 12:58:38.077898 >> Validated on 80/100 of the batches for this subepoch...
+2017-04-30 12:58:38.219222 >> +++++++++++++++++++++++ Reporting Accuracy over whole subepoch +++++++++++++++++++++++
+2017-04-30 12:58:38.219490 >> VALIDATION: Epoch #1, Subepoch #1, Overall:	 mean accuracy:   	0.9824	=> Correctly-Classified-Voxels/All-Predicted-Voxels = 4912/5000
+2017-04-30 12:58:38.221228 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-0 ++++++++ [Whole Foreground (Pos) Vs Background (Neg)] ++++++++++++++++
+2017-04-30 12:58:38.221435 >> VALIDATION: Epoch #1, Subepoch #1, Class-0:	 mean accuracy:   	0.9824	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 4912/5000
+2017-04-30 12:58:38.221666 >> VALIDATION: Epoch #1, Subepoch #1, Class-0:	 mean sensitivity:	0.7353	=> TruePos/RealPos = 50/68
+2017-04-30 12:58:38.221843 >> VALIDATION: Epoch #1, Subepoch #1, Class-0:	 mean specificity:	0.9858	=> TrueNeg/RealNeg = 4862/4932
+2017-04-30 12:58:38.221973 >> VALIDATION: Epoch #1, Subepoch #1, Class-0:	 mean Dice:       	0.5319
+2017-04-30 12:58:38.222061 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-1 ++++++++ [This Class (Pos) Vs All Others (Neg)] ++++++++++++++++
+2017-04-30 12:58:38.222202 >> VALIDATION: Epoch #1, Subepoch #1, Class-1:	 mean accuracy:   	0.9824	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 4912/5000
+2017-04-30 12:58:38.222319 >> VALIDATION: Epoch #1, Subepoch #1, Class-1:	 mean sensitivity:	0.7353	=> TruePos/RealPos = 50/68
+2017-04-30 12:58:38.222469 >> VALIDATION: Epoch #1, Subepoch #1, Class-1:	 mean specificity:	0.9858	=> TrueNeg/RealNeg = 4862/4932
+2017-04-30 12:58:38.222573 >> VALIDATION: Epoch #1, Subepoch #1, Class-1:	 mean Dice:       	0.5319
+2017-04-30 12:58:38.222819 >> TIMING: Validating on the batches of this subepoch #1 took time: 0.558632(s)
+2017-04-30 12:58:38.222996 >> UPDATE: In this last epoch (cnnTrained) #1 the CNN achieved a new highest mean validation accuracy of: 0.974
+2017-04-30 12:58:39.813040 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2017-04-30 12:58:39.813160 >> Images for subject loaded.
+2017-04-30 12:58:40.059056 >> From subject #0, sampling that many segments of Category [Foreground] : 500
+2017-04-30 12:58:41.248082 >> Finished sampling segments of Category [Foreground]. Number sampled: 500
+2017-04-30 12:58:41.375630 >> From subject #0, sampling that many segments of Category [Background] : 500
+2017-04-30 12:58:42.299254 >> Finished sampling segments of Category [Background]. Number sampled: 500
+2017-04-30 12:58:42.373070 >> TIMING: Extracting all the Segments for next Training took time: 4.618708(s)
+2017-04-30 12:58:42.373224 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Training. :=:=:=:=:=:=:=:=:
+2017-04-30 12:58:42.882318 >> Loading Training data for subepoch #1 on shared variable...
+2017-04-30 12:58:42.882559 >> TIMING: Loading sharedVariables for Training in epoch|subepoch=1|1 took time: 6.40000000089e-05(s)
+2017-04-30 12:58:42.884436 >> PARALLEL: Before Training in subepoch #1, submitting the parallel job for extracting Segments for the next Validation.
+2017-04-30 12:58:42.886918 >> -T-T-T-T-T- Now Training for this subepoch... This may take a few minutes... -T-T-T-T-T-
+2017-04-30 12:58:42.887107 >> Trained on 0/100 of the batches for this subepoch...
+2017-04-30 12:58:42.888997 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Validation... :=:=:=:=:=:=:=:=:
+2017-04-30 12:58:42.889152 >> Out of [1] subjects given for [Validation], it was specified to extract Segments from maximum [1] per subepoch.
+2017-04-30 12:58:42.889246 >> Shuffled indices of subjects that were randomly chosen: [0]
+2017-04-30 12:58:42.889513 >> SAMPLING: Starting iterations to extract Segments from each subject for next Validation...
+2017-04-30 12:58:42.889587 >> SAMPLING: Going to load the images and extract segments from the subject #1/1
+2017-04-30 12:58:42.889679 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/validation/Arterial_Phase_3_0_B30f_A10Z.nii.gz
+2017-04-30 12:58:45.407444 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2017-04-30 12:58:45.407675 >> Images for subject loaded.
+2017-04-30 12:58:45.472624 >> From subject #0, sampling that many segments of Category [Uniform] : 5000
+2017-04-30 12:58:46.699616 >> Finished sampling segments of Category [Uniform]. Number sampled: 5000
+2017-04-30 12:58:46.922070 >> TIMING: Extracting all the Segments for next Validation took time: 3.759487(s)
+2017-04-30 12:58:46.922267 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Validation. :=:=:=:=:=:=:=:=:
+2017-04-30 12:58:50.123397 >> Trained on 20/100 of the batches for this subepoch...
+2017-04-30 12:58:56.236522 >> Trained on 40/100 of the batches for this subepoch...
+2017-04-30 12:59:02.390688 >> Trained on 60/100 of the batches for this subepoch...
+2017-04-30 12:59:08.654700 >> Trained on 80/100 of the batches for this subepoch...
+2017-04-30 12:59:14.799284 >> +++++++++++++++++++++++ Reporting Accuracy over whole subepoch +++++++++++++++++++++++
+2017-04-30 12:59:14.799488 >> TRAINING: Epoch #1, Subepoch #1, Overall:	 mean accuracy:   	0.9495	=> Correctly-Classified-Voxels/All-Predicted-Voxels = 6512763/6859000
+2017-04-30 12:59:14.801570 >> TRAINING: Epoch #1, Subepoch #1, Overall:	 mean cost:      	0.24728
+2017-04-30 12:59:14.801760 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-0 ++++++++ [Whole Foreground (Pos) Vs Background (Neg)] ++++++++++++++++
+2017-04-30 12:59:14.801924 >> TRAINING: Epoch #1, Subepoch #1, Class-0:	 mean accuracy:   	0.9495	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 6512763/6859000
+2017-04-30 12:59:14.802188 >> TRAINING: Epoch #1, Subepoch #1, Class-0:	 mean sensitivity:	0.6353	=> TruePos/RealPos = 374064/588779
+2017-04-30 12:59:14.802377 >> TRAINING: Epoch #1, Subepoch #1, Class-0:	 mean specificity:	0.9790	=> TrueNeg/RealNeg = 6138699/6270221
+2017-04-30 12:59:14.802514 >> TRAINING: Epoch #1, Subepoch #1, Class-0:	 mean Dice:       	0.6836
+2017-04-30 12:59:14.802631 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-1 ++++++++ [This Class (Pos) Vs All Others (Neg)] ++++++++++++++++
+2017-04-30 12:59:14.802867 >> TRAINING: Epoch #1, Subepoch #1, Class-1:	 mean accuracy:   	0.9495	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 6512763/6859000
+2017-04-30 12:59:14.803114 >> TRAINING: Epoch #1, Subepoch #1, Class-1:	 mean sensitivity:	0.6353	=> TruePos/RealPos = 374064/588779
+2017-04-30 12:59:14.803291 >> TRAINING: Epoch #1, Subepoch #1, Class-1:	 mean specificity:	0.9790	=> TrueNeg/RealNeg = 6138699/6270221
+2017-04-30 12:59:14.803479 >> TRAINING: Epoch #1, Subepoch #1, Class-1:	 mean Dice:       	0.6836
+2017-04-30 12:59:14.803792 >> TIMING: Training on the batches of this subepoch #1 took time: 34.511165(s)
+2017-04-30 12:59:14.803947 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:59:14.804047 >> ~~~~~~~~~~~~~~~~~~ Epoch #1 finished. Reporting Accuracy over whole epoch. ~~~~~~~~~~~~~~~~~~
+2017-04-30 12:59:14.804261 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:59:14.804497 >> ( >>>>>>>>>>>>>>>>>>>> Reporting Accuracy over whole epoch <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:59:14.804663 >> VALIDATION: Epoch #1, Overall:	 mean accuracy of epoch:	0.9740	=> Correctly-Classified-Voxels/All-Predicted-Voxels
+2017-04-30 12:59:14.804856 >> VALIDATION: Epoch #1, Overall:	 mean accuracy of each subepoch:	[ 0.9656 0.9824 ]
+2017-04-30 12:59:14.804959 >> >>>>>>>>>>>> Reporting Accuracy over whole epoch for Class-0 >>>>>>>>> [Whole Foreground (Pos) Vs Background (Neg)] <<<<<<<<<<<<<
+2017-04-30 12:59:14.805137 >> VALIDATION: Epoch #1, Class-0:	 mean accuracy of epoch:	0.9740	=> (TruePos+TrueNeg)/All-Predicted-Voxels
+2017-04-30 12:59:14.805260 >> VALIDATION: Epoch #1, Class-0:	 mean sensitivity of epoch:	0.8276	=> TruePos/RealPos
+2017-04-30 12:59:14.805393 >> VALIDATION: Epoch #1, Class-0:	 mean specificity of epoch:	0.9761	=> TrueNeg/RealNeg
+2017-04-30 12:59:14.805498 >> VALIDATION: Epoch #1, Class-0:	 mean Dice of epoch:    	0.4885
+2017-04-30 12:59:14.805651 >> VALIDATION: Epoch #1, Class-0:	 mean accuracy of each subepoch:	[ 0.9656 0.9824 ]
+2017-04-30 12:59:14.805785 >> VALIDATION: Epoch #1, Class-0:	 mean sensitivity of each subepoch:	[ 0.9200 0.7353 ]
+2017-04-30 12:59:14.805961 >> VALIDATION: Epoch #1, Class-0:	 mean specificity of each subepoch:	[ 0.9663 0.9858 ]
+2017-04-30 12:59:14.806167 >> VALIDATION: Epoch #1, Class-0:	 mean Dice of each subepoch:    	[ 0.4452 0.5319 ]
+2017-04-30 12:59:14.806321 >> >>>>>>>>>>>> Reporting Accuracy over whole epoch for Class-1 >>>>>>>>> [This Class (Pos) Vs All Others (Neg)] <<<<<<<<<<<<<
+2017-04-30 12:59:14.806483 >> VALIDATION: Epoch #1, Class-1:	 mean accuracy of epoch:	0.9740	=> (TruePos+TrueNeg)/All-Predicted-Voxels
+2017-04-30 12:59:14.806675 >> VALIDATION: Epoch #1, Class-1:	 mean sensitivity of epoch:	0.8276	=> TruePos/RealPos
+2017-04-30 12:59:14.806783 >> VALIDATION: Epoch #1, Class-1:	 mean specificity of epoch:	0.9761	=> TrueNeg/RealNeg
+2017-04-30 12:59:14.806890 >> VALIDATION: Epoch #1, Class-1:	 mean Dice of epoch:    	0.4885
+2017-04-30 12:59:14.807006 >> VALIDATION: Epoch #1, Class-1:	 mean accuracy of each subepoch:	[ 0.9656 0.9824 ]
+2017-04-30 12:59:14.807096 >> VALIDATION: Epoch #1, Class-1:	 mean sensitivity of each subepoch:	[ 0.9200 0.7353 ]
+2017-04-30 12:59:14.807247 >> VALIDATION: Epoch #1, Class-1:	 mean specificity of each subepoch:	[ 0.9663 0.9858 ]
+2017-04-30 12:59:14.807381 >> VALIDATION: Epoch #1, Class-1:	 mean Dice of each subepoch:    	[ 0.4452 0.5319 ]
+2017-04-30 12:59:14.807495 >> >>>>>>>>>>>>>>>>>>>>>>>>> End Of Accuracy Report at the end of Epoch <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:59:14.807561 >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:59:14.807674 >> ( >>>>>>>>>>>>>>>>>>>> Reporting Accuracy over whole epoch <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:59:14.807819 >> TRAINING: Epoch #1, Overall:	 mean accuracy of epoch:	0.9465	=> Correctly-Classified-Voxels/All-Predicted-Voxels
+2017-04-30 12:59:14.807974 >> TRAINING: Epoch #1, Overall:	 mean cost of epoch:    	0.28631
+2017-04-30 12:59:14.808097 >> TRAINING: Epoch #1, Overall:	 mean accuracy of each subepoch:	[ 0.9435 0.9495 ]
+2017-04-30 12:59:14.808239 >> TRAINING: Epoch #1, Overall:	 mean cost of each subepoch:    	[ 0.32533 0.24728 ]
+2017-04-30 12:59:14.808316 >> >>>>>>>>>>>> Reporting Accuracy over whole epoch for Class-0 >>>>>>>>> [Whole Foreground (Pos) Vs Background (Neg)] <<<<<<<<<<<<<
+2017-04-30 12:59:14.808444 >> TRAINING: Epoch #1, Class-0:	 mean accuracy of epoch:	0.9465	=> (TruePos+TrueNeg)/All-Predicted-Voxels
+2017-04-30 12:59:14.808550 >> TRAINING: Epoch #1, Class-0:	 mean sensitivity of epoch:	0.6472	=> TruePos/RealPos
+2017-04-30 12:59:14.808633 >> TRAINING: Epoch #1, Class-0:	 mean specificity of epoch:	0.9745	=> TrueNeg/RealNeg
+2017-04-30 12:59:14.808717 >> TRAINING: Epoch #1, Class-0:	 mean Dice of epoch:    	0.6742
+2017-04-30 12:59:14.808835 >> TRAINING: Epoch #1, Class-0:	 mean accuracy of each subepoch:	[ 0.9435 0.9495 ]
+2017-04-30 12:59:14.808974 >> TRAINING: Epoch #1, Class-0:	 mean sensitivity of each subepoch:	[ 0.6591 0.6353 ]
+2017-04-30 12:59:14.809068 >> TRAINING: Epoch #1, Class-0:	 mean specificity of each subepoch:	[ 0.9699 0.9790 ]
+2017-04-30 12:59:14.809209 >> TRAINING: Epoch #1, Class-0:	 mean Dice of each subepoch:    	[ 0.6647 0.6836 ]
+2017-04-30 12:59:14.809341 >> >>>>>>>>>>>> Reporting Accuracy over whole epoch for Class-1 >>>>>>>>> [This Class (Pos) Vs All Others (Neg)] <<<<<<<<<<<<<
+2017-04-30 12:59:14.809571 >> TRAINING: Epoch #1, Class-1:	 mean accuracy of epoch:	0.9465	=> (TruePos+TrueNeg)/All-Predicted-Voxels
+2017-04-30 12:59:14.809716 >> TRAINING: Epoch #1, Class-1:	 mean sensitivity of epoch:	0.6472	=> TruePos/RealPos
+2017-04-30 12:59:14.809877 >> TRAINING: Epoch #1, Class-1:	 mean specificity of epoch:	0.9745	=> TrueNeg/RealNeg
+2017-04-30 12:59:14.809986 >> TRAINING: Epoch #1, Class-1:	 mean Dice of epoch:    	0.6742
+2017-04-30 12:59:14.810130 >> TRAINING: Epoch #1, Class-1:	 mean accuracy of each subepoch:	[ 0.9435 0.9495 ]
+2017-04-30 12:59:14.810278 >> TRAINING: Epoch #1, Class-1:	 mean sensitivity of each subepoch:	[ 0.6591 0.6353 ]
+2017-04-30 12:59:14.810366 >> TRAINING: Epoch #1, Class-1:	 mean specificity of each subepoch:	[ 0.9699 0.9790 ]
+2017-04-30 12:59:14.810533 >> TRAINING: Epoch #1, Class-1:	 mean Dice of each subepoch:    	[ 0.6647 0.6836 ]
+2017-04-30 12:59:14.810641 >> >>>>>>>>>>>>>>>>>>>>>>>>> End Of Accuracy Report at the end of Epoch <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:59:14.810720 >> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017-04-30 12:59:14.810871 >> DEBUG: Going to lower Learning Rate and Increase Momentum because of EXPONENTIAL schedule! The CNN has now been trained for: 1 epochs.
+2017-04-30 12:59:14.811009 >> UPDATE: (epoch-cnn-trained#1) Changing the Cnn's Learning Rate to: 3.90625e-06
+2017-04-30 12:59:14.811275 >> UPDATE: (epoch-cnn-trained#1) Changing the Cnn's Momentum to: 0.9
+2017-04-30 12:59:14.811474 >> SAVING: Epoch #1 finished. Saving CNN model.
+2017-04-30 12:59:14.811830 >> Saving network to: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/cnnModels/trainSessionWithValidTinyCnn/tinyCnn.trainSessionWithValidTinyCnn.2017-04-30.12.59.14.811555.save
+2017-04-30 12:59:17.115981 >> Model saved.
+2017-04-30 12:59:17.116126 >> TIMING: The whole Epoch #1 took time: 73.607674(s)
+2017-04-30 12:59:17.118383 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ End of Training Epoch. Model was Saved. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:59:17.118553 >> ***Starting validation with Full Inference / Segmentation on validation subjects for Epoch #1...***
+2017-04-30 12:59:17.118688 >> ###########################################################################################################
+2017-04-30 12:59:17.118839 >> ############################# Starting full Segmentation of Validation subjects ##########################
+2017-04-30 12:59:17.119056 >> ###########################################################################################################
+2017-04-30 12:59:17.119295 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:59:17.119411 >> ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2017-04-30 12:59:17.119524 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/dataForExamples/brats2015TrainingData/validation/Arterial_Phase_3_0_B30f_A10Z.nii.gz
+2017-04-30 12:59:19.408976 >> Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2017-04-30 12:59:19.441291 >> Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2017-04-30 12:59:19.441503 >> Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2017-04-30 12:59:19.443467 >> Total number of Segments to process:280
+2017-04-30 12:59:19.443611 >> Processed 0/280 Segments.
+2017-04-30 12:59:22.038199 >> Processed 50/280 Segments.
+2017-04-30 12:59:24.654426 >> Processed 100/280 Segments.
+2017-04-30 12:59:27.348113 >> Processed 150/280 Segments.
+2017-04-30 12:59:29.788641 >> Processed 200/280 Segments.
+2017-04-30 12:59:32.401293 >> Processed 250/280 Segments.
+2017-04-30 12:59:33.909156 >> TIMING: Segmentation of this subject: [Extracting:] 0.068595 [Loading:] 0.00122000000005 [ForwardPass:] 16.475146 [Total:] 16.544961(s)
+2017-04-30 12:59:34.589043 >> Saving the new label (segmentation) image for the subject #0
+2017-04-30 12:59:35.139232 >> Image saved at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/predictions/trainSessionWithValidTinyCnn/predictions/pred_brats_2013_pat0003_1_Segm.nii.gz
+2017-04-30 12:59:35.139499 >> Saving the new label (segmentation) image for the subject #0
+2017-04-30 12:59:38.362993 >> Image saved at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/predictions/trainSessionWithValidTinyCnn/predictions/pred_brats_2013_pat0003_1_ProbMapClass0.nii.gz
+2017-04-30 12:59:38.363341 >> Saving the new label (segmentation) image for the subject #0
+2017-04-30 12:59:42.313664 >> Image saved at: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/predictions/trainSessionWithValidTinyCnn/predictions/pred_brats_2013_pat0003_1_ProbMapClass1.nii.gz
+2017-04-30 12:59:42.313885 >> +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #0 ++++++++++++++++++++++++++
+2017-04-30 12:59:43.718393 >> ACCURACY: (Validation) The Per-Class DICE Coefficients for subject with index #0 equal: DICE1=[ 0.5513 0.5513 ] DICE2=[ 0.5629 0.5629 ] DICE3=[ 0.5629 0.5629 ]
+2017-04-30 12:59:43.718681 >> EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0 we calculate DICE for the whole foreground (useful for multi-class problems).
+2017-04-30 12:59:43.720819 >> EXPLANATION: DICE1 is calculated whole segmentation vs whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
+2017-04-30 12:59:43.721063 >> +++++++++++++++++++++++++++++++ Segmentation of all subjects finished +++++++++++++++++++++++++++++++++++
+2017-04-30 12:59:43.721244 >> +++++++++++++++++++++ Reporting Average Segmentation Metrics over all subjects ++++++++++++++++++++++++++
+2017-04-30 12:59:43.721524 >> ACCURACY: (Validation) The Per-Class average DICE Coefficients over all subjects are: DICE1=[ 0.5513 0.5513 ] DICE2=[ 0.5629 0.5629 ] DICE3=[ 0.5629 0.5629 ]
+2017-04-30 12:59:43.721722 >> EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0 we calculate DICE for the whole foreground (useful for multi-class problems).
+2017-04-30 12:59:43.721970 >> EXPLANATION: DICE1 is calculated whole segmentation vs whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
+2017-04-30 12:59:43.722185 >> TIMING: Validation process took time: 28.821768(s)
+2017-04-30 12:59:43.722384 >> ###########################################################################################################
+2017-04-30 12:59:43.722535 >> ############################# Finished full Segmentation of Validation subjects ##########################
+2017-04-30 12:59:43.722683 >> ###########################################################################################################
+2017-04-30 12:59:43.806068 >> Saving network to: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/ribCnn/output/cnnModels/trainSessionWithValidTinyCnn/tinyCnn.trainSessionWithValidTinyCnn.final.2017-04-30.12.59.43.805636.save
+2017-04-30 12:59:46.400294 >> Model saved.
+2017-04-30 12:59:46.400465 >> TIMING: Training process took time: 210.66717(s)
+2017-04-30 12:59:46.402699 >> The whole do_training() function has finished.
+2017-04-30 12:59:46.437940 >> =======================================================
+2017-04-30 12:59:46.438098 >> =========== Training session finished =================
+2017-04-30 12:59:46.440114 >> =======================================================

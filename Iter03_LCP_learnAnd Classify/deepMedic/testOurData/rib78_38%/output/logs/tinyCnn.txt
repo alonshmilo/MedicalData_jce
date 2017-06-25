@@ -1,0 +1,96 @@
+2017-05-09 12:29:43.817347 >> CONFIG: The configuration file for the model-creation session was loaded from: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/rib78/configFiles/tinyCnn/model/modelConfig.cfg
+2017-05-09 12:29:43.817863 >> ===========    NEW CREATE-MODEL SESSION    ============
+2017-05-09 12:29:43.819764 >> =============================================================
+2017-05-09 12:29:43.820028 >> =============== PARAMETERS FOR MODEL CREATION ===============
+2017-05-09 12:29:43.820185 >> =============================================================
+2017-05-09 12:29:43.820454 >> CNN model's name = tinyCnn
+2017-05-09 12:29:43.820667 >> Main output folder = /Users/stavbarazani/Documents/Deep-Medic/deepmedic/rib78/output
+2017-05-09 12:29:43.820892 >> Path and filename to save model = /Users/stavbarazani/Documents/Deep-Medic/deepmedic/rib78/output/cnnModels/tinyCnn
+2017-05-09 12:29:43.821035 >> ~~~~~~~~~~~~~~~~~~Model parameters~~~~~~~~~~~~~~~~
+2017-05-09 12:29:43.821160 >> Number of Classes (including background) = 2
+2017-05-09 12:29:43.821275 >> ~~Normal Pathway~~
+2017-05-09 12:29:43.821499 >> Number of Input Channels = 1
+2017-05-09 12:29:43.821721 >> Number of Layers = 3
+2017-05-09 12:29:43.821874 >> Number of Feature Maps per layer = [4, 5, 6]
+2017-05-09 12:29:43.822014 >> Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2017-05-09 12:29:43.822202 >> Receptive Field = [7, 7, 7]
+2017-05-09 12:29:43.822341 >> Residual connections added at the output of layers (indices from 0) = []
+2017-05-09 12:29:43.822575 >> Layers that will be made of Lower Rank (indices from 0) = []
+2017-05-09 12:29:43.822828 >> Lower Rank layers will be made of rank = []
+2017-05-09 12:29:43.823089 >> ~~Subsampled Pathway~~
+2017-05-09 12:29:43.823326 >> Use subsampled Pathway = False
+2017-05-09 12:29:43.823607 >> Number of Layers = 0
+2017-05-09 12:29:43.823780 >> Number of Feature Maps per layer = []
+2017-05-09 12:29:43.824077 >> Kernel Dimensions per layer = []
+2017-05-09 12:29:43.824257 >> Receptive Field = []
+2017-05-09 12:29:43.824418 >> Subsampling Factor = []
+2017-05-09 12:29:43.824576 >> Residual connections added at the output of layers (indices from 0) = []
+2017-05-09 12:29:43.824722 >> Layers that will be made of Lower Rank (indices from 0) = []
+2017-05-09 12:29:43.824991 >> Lower Rank layers will be made of rank = []
+2017-05-09 12:29:43.825114 >> ~~Fully Connected Pathway~~
+2017-05-09 12:29:43.825421 >> Number of additional FC layers (Excluding the Classif. Layer) = 0
+2017-05-09 12:29:43.825552 >> Number of Feature Maps in the additional FC layers = []
+2017-05-09 12:29:43.825664 >> Residual connections added at the output of layers (indices from 0) = []
+2017-05-09 12:29:43.825932 >> Layers that will be made of Lower Rank (indices from 0) = []
+2017-05-09 12:29:43.826086 >> Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [1, 1, 1]
+2017-05-09 12:29:43.826213 >> ~~Size Of Image Segments~~
+2017-05-09 12:29:43.826347 >> Size of Segments for Training = [25, 25, 25]
+2017-05-09 12:29:43.826453 >> Size of Segments for Validation = [7, 7, 7]
+2017-05-09 12:29:43.826672 >> Size of Segments for Testing = [45, 45, 45]
+2017-05-09 12:29:43.826924 >> ~~Size Of Image Segments (Subsampled, auto-calculated)~~
+2017-05-09 12:29:43.827060 >> Size of Segments for Training (Subsampled) = []
+2017-05-09 12:29:43.827178 >> Size of Segments for Validation (Subsampled) = []
+2017-05-09 12:29:43.827364 >> Size of Segments for Testing (Subsampled) = []
+2017-05-09 12:29:43.827513 >> ~~Batch Sizes~~
+2017-05-09 12:29:43.827646 >> Batch Size for Training = 10
+2017-05-09 12:29:43.827763 >> Batch Size for Validation = 50
+2017-05-09 12:29:43.827890 >> Batch Size for Testing = 10
+2017-05-09 12:29:43.828098 >> ~~Dropout Rates~~
+2017-05-09 12:29:43.828237 >> Drop.R. for each layer in Normal Pathway = []
+2017-05-09 12:29:43.828357 >> Drop.R. for each layer in Subsampled Pathway = []
+2017-05-09 12:29:43.828732 >> Drop.R. for each layer in FC Pathway (additional FC layers + Classific.Layer at end) = [0.5]
+2017-05-09 12:29:43.828945 >> ~~L1/L2 Regularization~~
+2017-05-09 12:29:43.829095 >> L1 Regularization term = 1e-06
+2017-05-09 12:29:43.829295 >> L2 Regularization term = 0.0001
+2017-05-09 12:29:43.829426 >> ~~Weight Initialization~~
+2017-05-09 12:29:43.829631 >> Classic random N(0,0.01) initialization (0), or ala "Delving Into Rectifier" (1) = 1
+2017-05-09 12:29:43.829784 >> ~~Activation Function~~
+2017-05-09 12:29:43.829929 >> ReLU (0), or PReLU (1) = 1
+2017-05-09 12:29:43.830123 >> ~~Batch Normalization~~
+2017-05-09 12:29:43.830238 >> Apply BN straight on pathways' inputs (eg straight on segments) = [False, False, 'Placeholder', False]
+2017-05-09 12:29:43.830321 >> Batch Normalization uses a rolling average for inference, over this many batches = 60
+2017-05-09 12:29:43.830407 >> ~~Optimization~~
+2017-05-09 12:29:43.830565 >> Initial Learning rate = 0.001
+2017-05-09 12:29:43.830665 >> Optimizer to use: SGD(0), Adam(1), RmsProp(2) = 2
+2017-05-09 12:29:43.830757 >> Parameters for Adam: b1= placeholder, b2=placeholder, e= placeholder
+2017-05-09 12:29:43.830848 >> Parameters for RmsProp: rho= 0.9, e= 0.0001
+2017-05-09 12:29:43.830969 >> Momentum Type: Classic (0) or Nesterov (1) = 1
+2017-05-09 12:29:43.831180 >> Momentum Non-Normalized (0) or Normalized (1) = 1
+2017-05-09 12:29:43.831298 >> Momentum Value = 0.6
+2017-05-09 12:29:43.831428 >> ========== Done with printing session's parameters ==========
+2017-05-09 12:29:43.831539 >> =============================================================
+2017-05-09 12:29:43.831629 >> =========== Creating the CNN model ===============
+2017-05-09 12:29:43.833509 >> ...Building the CNN model...
+2017-05-09 12:29:44.030991 >> DEBUG: Shape of output of the FIRST PATH: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2017-05-09 12:29:44.031249 >> DEBUG: Shape of the kernel of the first FC layer is : [1, 1, 1]
+2017-05-09 12:29:44.033112 >> DEBUG: Shape of input to the FC PATH: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2017-05-09 12:29:44.033233 >> DEBUG: Filter Shape of the final-FC-classification Layer: [2, 6, 1, 1, 1]
+2017-05-09 12:29:44.033528 >> DEBUG: Shape of input to the Classification layer: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2017-05-09 12:29:44.127980 >> Finished building the CNN's model.
+2017-05-09 12:29:44.128148 >> Setting the training-related attributes of the CNN.
+2017-05-09 12:29:44.130008 >> UPDATE: (epoch-cnn-trained#0) Changing the Cnn's Learning Rate to: 0.001
+2017-05-09 12:29:44.130277 >> UPDATE: (epoch-cnn-trained#0) Changing the Cnn's Momentum to: 0.6
+2017-05-09 12:29:44.130609 >> UPDATE: (epoch-cnn-trained#0) Changing the Cnn's Rho parameter for RMSProp optimization to: Rho = 0.9
+2017-05-09 12:29:44.130718 >> ...Building the training function...
+2017-05-09 12:29:44.156438 >> Optimizer used: [RMSProp]. Momentum used: Classic0 or Nesterov1 : 1
+2017-05-09 12:29:44.703425 >> ...Compiling the function for training... (This may take a few minutes...)
+2017-05-09 12:29:55.981619 >> The training function was compiled.
+2017-05-09 12:29:55.983845 >> ...Building the validation function...
+2017-05-09 12:29:55.988604 >> ...Compiling the function for validation... (This may take a few minutes...)
+2017-05-09 12:29:57.425907 >> The validation function was compiled.
+2017-05-09 12:29:57.426120 >> ...Building the function for testing and visualisation of FMs...
+2017-05-09 12:29:57.433375 >> ...Compiling the function for testing and visualisation of FMs... (This may take a few minutes...)
+2017-05-09 12:29:58.624619 >> The function for testing and visualisation of FMs was compiled.
+2017-05-09 12:29:58.625164 >> Saving network to: /Users/stavbarazani/Documents/Deep-Medic/deepmedic/rib78/output/cnnModels/tinyCnn.initial.2017-05-09.12.29.58.624758.save
+2017-05-09 12:30:01.248706 >> Model saved.
+2017-05-09 12:30:01.249168 >> =========== Creation of the model: "tinyCnn" finished =================

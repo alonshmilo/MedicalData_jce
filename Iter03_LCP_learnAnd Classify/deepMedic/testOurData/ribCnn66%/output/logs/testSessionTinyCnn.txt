@@ -1,0 +1,83 @@
+2017-06-20 11:41:41.412123 >> CONFIG: The configuration file for the testing session was loaded from: /Users/stavbarazani/Documents/deepmedic/ribCnn66%/configFiles/tinyCnn/test/testConfig.cfg
+2017-06-20 11:41:41.412419 >> =========== Loading the CNN model for testing... ===============
+2017-06-20 11:41:41.414613 >> WARN: A CNN-Model to use was specified both in the command line input and in the test-config-file! The input by the command line will be used: /Users/stavbarazani/Documents/deepmedic/ribCnn66%/output/cnnModels/trainSessionWithValidTinyCnn/tinyCnn.trainSessionWithValidTinyCnn.final.2017-06-18.12.58.25.291648.save
+2017-06-20 11:41:41.414820 >> ...Loading the network can take a few minutes if the model is big...
+2017-06-20 11:41:52.668328 >> The CNN model was loaded successfully from: /Users/stavbarazani/Documents/deepmedic/ribCnn66%/output/cnnModels/trainSessionWithValidTinyCnn/tinyCnn.trainSessionWithValidTinyCnn.final.2017-06-18.12.58.25.291648.save
+2017-06-20 11:41:52.670559 >> 
+===========       NEW TESTING SESSION         ===============
+2017-06-20 11:41:52.670676 >> =============================================================
+2017-06-20 11:41:52.670946 >> ================= PARAMETERS OF THIS SESSION ================
+2017-06-20 11:41:52.671108 >> =============================================================
+2017-06-20 11:41:52.671274 >> sessionName = testSessionTinyCnn
+2017-06-20 11:41:52.671356 >> ~~~~~~~~~~~~~~~~~~~~INPUT~~~~~~~~~~~~~~~~
+2017-06-20 11:41:52.671487 >> Number of Classes (from CNN Model) = 2
+2017-06-20 11:41:52.671578 >> Number of cases to perform inference on = 1
+2017-06-20 11:41:52.671663 >> number of channels (modalities) = 1
+2017-06-20 11:41:52.671814 >> Paths to the channels of each case = [['/Users/stavbarazani/Documents/deepmedic/ribCnn66%/dataForExamples/brats2015TrainingData/test/Portal_phase_3_0_B40f_A1EJ187_scan.nii.gz']]
+2017-06-20 11:41:52.671939 >> User provided Ground Truth labels for DSC calculation = False
+2017-06-20 11:41:52.672078 >> >>> WARN: The DSC accuracy will NOT be evaluated and reported!
+2017-06-20 11:41:52.672226 >> Paths to the provided GT labels per case = []
+2017-06-20 11:41:52.672361 >> User provided Region-Of-Interest Masks for faster inference = True
+2017-06-20 11:41:52.672534 >> Filepaths of the ROI Masks provided per case = ['/Users/stavbarazani/Documents/deepmedic/ribCnn66%/dataForExamples/brats2015TrainingData/test/mask_187.nii.gz']
+2017-06-20 11:41:52.672683 >> ~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~
+2017-06-20 11:41:52.672789 >> Path to the main output-folder = /Users/stavbarazani/Documents/deepmedic/ribCnn66%/output
+2017-06-20 11:41:52.672900 >> Provided names to use to save results for each case = ['pred_brats_2013_pat0001_1.nii.gz', 'pred_brats_2013_pat0002_1.nii.gz']
+2017-06-20 11:41:52.673002 >> ~~~~~~~Ouput-parameters for Predictions (segmentation and probability maps)~~~~
+2017-06-20 11:41:52.673140 >> Save the predicted segmentation = True
+2017-06-20 11:41:52.673251 >> Save the probability maps = [True, True]
+2017-06-20 11:41:52.673341 >> Paths where to save predictions per case = ['/Users/stavbarazani/Documents/deepmedic/ribCnn66%/output/predictions/testSessionTinyCnn/predictions//pred_brats_2013_pat0001_1.nii.gz']
+2017-06-20 11:41:52.673409 >> ~~~~~~~Ouput-parameters for Feature Maps (FMs)~~~~~~
+2017-06-20 11:41:52.673502 >> Save FMs in individual images = True
+2017-06-20 11:41:52.673604 >> Save all requested FMs in one 4D image = False
+2017-06-20 11:41:52.673724 >> Indices of min/max FMs to save, per type of pathway (normal/subsampled/FC) and per layer = [[[], [1, 3], []], []]
+2017-06-20 11:41:52.673924 >> Save Feature Maps at = ['/Users/stavbarazani/Documents/deepmedic/ribCnn66%/output/predictions/testSessionTinyCnn/features//pred_brats_2013_pat0001_1.nii.gz']
+2017-06-20 11:41:52.674047 >> ~~~~~~~ Parameters for Preprocessing ~~~~~~
+2017-06-20 11:41:52.674126 >> Pad Input Images = True
+2017-06-20 11:41:52.674224 >> ========== Done with printing session's parameters ==========
+2017-06-20 11:41:52.674318 >> =============================================================
+2017-06-20 11:41:52.674419 >> 
+=======================================================
+2017-06-20 11:41:52.674479 >> =========== Compiling the Testing Function ============
+2017-06-20 11:41:52.674564 >> =======================================================
+2017-06-20 11:41:52.674689 >> ...Building the function for testing and visualisation of FMs...
+2017-06-20 11:41:52.701673 >> ...Compiling the function for testing and visualisation of FMs... (This may take a few minutes...)
+2017-06-20 11:41:53.570962 >> The function for testing and visualisation of FMs was compiled.
+2017-06-20 11:41:53.571118 >> 
+======================================================
+2017-06-20 11:41:53.573227 >> =========== Testing with the CNN model ===============
+2017-06-20 11:41:53.573360 >> ======================================================
+2017-06-20 11:41:53.573515 >> ###########################################################################################################
+2017-06-20 11:41:53.573665 >> ############################# Starting full Segmentation of Testing subjects ##########################
+2017-06-20 11:41:53.573764 >> ###########################################################################################################
+2017-06-20 11:41:53.573986 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-06-20 11:41:53.574099 >> ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2017-06-20 11:41:53.574282 >> Loading subject with 1st channel at: /Users/stavbarazani/Documents/deepmedic/ribCnn66%/dataForExamples/brats2015TrainingData/test/Portal_phase_3_0_B40f_A1EJ187_scan.nii.gz
+2017-06-20 11:41:57.079426 >> Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2017-06-20 11:41:57.227184 >> Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2017-06-20 11:41:57.227312 >> Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2017-06-20 11:41:57.229294 >> Total number of Segments to process:560
+2017-06-20 11:41:57.229477 >> Processed 0/560 Segments.
+2017-06-20 11:42:02.744149 >> Processed 110/560 Segments.
+2017-06-20 11:42:07.791005 >> Processed 220/560 Segments.
+2017-06-20 11:42:12.781969 >> Processed 330/560 Segments.
+2017-06-20 11:42:17.746353 >> Processed 440/560 Segments.
+2017-06-20 11:42:22.754781 >> Processed 550/560 Segments.
+2017-06-20 11:42:23.208114 >> TIMING: Segmentation of this subject: [Extracting:] 0.003456 [Loading:] 0.156537 [ForwardPass:] 29.404259 [Total:] 29.564252(s)
+2017-06-20 11:42:24.811288 >> Saving the new label (segmentation) image for the subject #0
+2017-06-20 11:42:26.203408 >> Image saved at: /Users/stavbarazani/Documents/deepmedic/ribCnn66%/output/predictions/testSessionTinyCnn/predictions/pred_brats_2013_pat0001_1_Segm.nii.gz
+2017-06-20 11:42:26.421716 >> Saving the new label (segmentation) image for the subject #0
+2017-06-20 11:42:31.829208 >> Image saved at: /Users/stavbarazani/Documents/deepmedic/ribCnn66%/output/predictions/testSessionTinyCnn/predictions/pred_brats_2013_pat0001_1_ProbMapClass0.nii.gz
+2017-06-20 11:42:32.116819 >> Saving the new label (segmentation) image for the subject #0
+2017-06-20 11:42:38.338512 >> Image saved at: /Users/stavbarazani/Documents/deepmedic/ribCnn66%/output/predictions/testSessionTinyCnn/predictions/pred_brats_2013_pat0001_1_ProbMapClass1.nii.gz
+2017-06-20 11:42:38.338823 >> Saving the new Fm-activation image for the subject #0, pathway:0, layer: 1 FM: 1
+2017-06-20 11:42:46.179358 >> Image saved at: /Users/stavbarazani/Documents/deepmedic/ribCnn66%/output/predictions/testSessionTinyCnn/features/pred_brats_2013_pat0001_1_pathway0_layer1_fm1.nii.gz
+2017-06-20 11:42:46.179771 >> Saving the new Fm-activation image for the subject #0, pathway:0, layer: 1 FM: 2
+2017-06-20 11:42:54.502156 >> Image saved at: /Users/stavbarazani/Documents/deepmedic/ribCnn66%/output/predictions/testSessionTinyCnn/features/pred_brats_2013_pat0001_1_pathway0_layer1_fm2.nii.gz
+2017-06-20 11:42:54.502445 >> TIMING: Testing process took time: 64.91233(s)
+2017-06-20 11:42:54.502725 >> ###########################################################################################################
+2017-06-20 11:42:54.502974 >> ############################# Finished full Segmentation of Testing subjects ##########################
+2017-06-20 11:42:54.503076 >> ###########################################################################################################
+2017-06-20 11:42:54.685035 >> 
+======================================================
+2017-06-20 11:42:54.685212 >> =========== Testing session finished =================
+2017-06-20 11:42:54.687280 >> ======================================================

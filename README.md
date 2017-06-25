@@ -9,6 +9,7 @@
 * The project is being written during the end of 3rd year and 4th year of our study. 
 * This repository will include all the codes and information about the progress of the project, from the bid stage to the presentation.
 * Please view the wiki-pages for more information
+* Folder "final" contains the final code and files for the project
 
 ## Staff:
 * Presentors: Alon Tsalik Shmilovich and Stav Barazani <br>
@@ -32,4 +33,4 @@ Please view the wiki-pages for more information
 - [Iteration 1 MVP](https://github.com/alonshmilo/MedicalData_jce/wiki/Iteration-1-MVP)
 - [Iteration 2 DMC](https://github.com/alonshmilo/MedicalData_jce/wiki/Iteration-2-DMC)
 - [Iteration 3 LCP](https://github.com/alonshmilo/MedicalData_jce/wiki/Iteration-3-LCP)
-- Iteration 4
+- [Iteration 4 FPS](https://github.com/alonshmilo/MedicalData_jce/wiki/Iteration-4-FPS)

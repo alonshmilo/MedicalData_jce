@@ -9,6 +9,8 @@ Table of Contents
   * [1.3 Required Data Pre-Processing](http://)   
   * [1.4  GPU Processing](http://)  
 * [2. Running the Software](http://)  
+* [3. How it works](http://)
+  *[3.1. Model Creation](http://)
 
 ## 1. Installation and Requirements
 
@@ -175,3 +177,49 @@ For example:
  IMPORTANT: Trainable parameters are NOT reinitialized! 
  Useful to begin a secondary training session with new learning-rate schedule, in order to fine-tune a previously 
  trained model (Doc., Sec. 3.2)
+
+**3. How it works**
+In this section we will go through the process in a bit more detail. We also explain the main parameters that should be specified in the configuration files.
+
+Note: The config files are parsed as python scripts, thus follow python syntax. Any commented-out configuration variables are internally given default values.
+
+**3.1. Model Creation**
+
+After reading the parameters given in modelConfig.cfg, a CNN-model will be created and saved with cPickle in the output folder. The session prints all the parameters that are used for the model-creation on the screen and to a log.txt file.
+
+The main parameters to specify the CNN model are the following.
+
+Generic:
+
+**modelName:** the cnn-model’s name, will be used for naming the files that the model is being saved with after its creation, but also during training.
+
+**folderForOutput:** The main output folder. Saved model and logs will be placed here.
+
+Task Specific:
+
+**numberOfOutputClasses:** DeepMedic is multiclass system. This number should include the background, and defines the number of FMs in the last, classification layer.
+
+**numberOfInputChannels:** Specify the number of modalities/sequences/channels of the scans.
+
+Architecture:
+
+**numberFMsPerLayerNormal:** A list which needs to have as many entries as the number of layers in the normal pathway that we want to create. Each entry is a number, which defines the number of feature-maps in the corresponding layer.
+
+**kernelDimPerLayerNormal:** The dimensions of the kernels per layer. 
+
+**useSubsampledPathway:** Setting this to “True” creates a subsampled-pathway, with the same architecture as the normal one. “False” for single-scale processing with the normal pathway only. Additional parameters allow tailoring this pathway further.
+
+**numberFMsPerLayerFC:** The final layers of the two pathways are contatenated. This parameter allows the addition of extra hidden FC layers before the classification layer. The number of entries specified how many extra layers, the number of each entry specifies the number of FMs in each layer. Final classification layer not included.
+
+Image Segments and Batch Sizes:
+
+**segmentsDim(Train/Val/Inference):** The dimensions of the input-segment. Different sizes can be used for training, validation, inference (testing). Bigger sizes require more memory and computation. Training segment size greatly influences distribution of training samples.
+Validation segments are by default as large as the receptive field (one patch).
+Size of testing-segments only influences speed.
+
+**Batch Size:** The number of segments to process simultaneously on GPU. In training, bigger batch sizes achieve better convergence and results, but require more computation and memory.
+Batch sizes for Validation and Inference are less important, greater once just speedup the process.
+
+More variables are available, but are of less importance (regularization, optimizer, etc). They are described in the config files of the provided examples.
+
+

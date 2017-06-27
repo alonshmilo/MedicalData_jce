@@ -9,8 +9,9 @@ Table of Contents
   * [1.3 Required Data Pre-Processing](http://)   
   * [1.4  GPU Processing](http://)  
 * [2. Running the Software](http://)  
-* [3. How it works](http://)
-  *[3.1. Model Creation](http://)
+* [3. How it works](http://) 
+  * [3.1. Model Creation](http://)
+  * [3.2 Training](http://)
 
 ## 1. Installation and Requirements
 
@@ -62,7 +63,8 @@ If the lines with the corresponding lines are not commented out, the given path 
  (per -subject, no need for inter-subject registration).
 * The images of each subject should **have the same dimensions** (per subject, no need for whole database).
  This is, the number of voxels per dimension must be the same for all images of a subject.
-* **Resample all images in the database to the same voxel size**. The latter is needed because the kernels (filters) of the DeepMedic need to correspond to the same real-size patterns (structures) **for all subjects**.
+* **Resample all images in the database to the same voxel size**. The latter is needed because the kernels (filters) of the 
+DeepMedic need to correspond to the same real-size patterns (structures) **for all subjects**.
 * Make sure that the **ground-truth labels** for training and evaluation represent the background with zero.
  The system also assumes that the task’s classes are indexed increasing by one (not 0,10,20 but 0,1,2).
 * You are strongly advised to normalize the intensity of the data within the ROI to a zero-mean, unary-variance space. Our default configuration significantly underperforms if intensities are in another range of values.
@@ -74,7 +76,8 @@ For this, an installation of [Nvidia’s CUDA](https://developer.nvidia.com/cuda
 Make sure to acquire a version compatible with your GPU drivers.
 Theano needs to be able to find CUDA’s compiler, the nvcc, in the environment’s path.
 It also dynamically links to cublas.so libraries, which need to be visible in the environment’s.
-Prior to running DeepMedic on the GPU, you must manually add the paths to the folders containing these files in your environment's variables.
+Prior to running DeepMedic on the GPU, you must manually add the paths to the folders containing these files in your 
+environment's variables.
 As an example, in a cshell this can be done with setenv:
 
     setenv PATH '/path-to/cuda/7.0.28/bin':$PATH
@@ -89,7 +92,8 @@ We also provide the full configuration of the DeepMedic model in the folder ribD
 **TO create a model** :
 
      ./deepMedicRun -newModel ./examples/configFiles/tinyCnn/model/modelConfig.cfg
-This command parses the given configuration file, creates a CNN model with the specified architecture, initializes and saves it.
+This command parses the given configuration file, creates a CNN model with the specified architecture, initializes and saves
+it.
 The folder ./ribDeepMedic/output/ should have been created by the process, where all output is saved.
 When the process finishes (roughly after a couple of minutes) a new and untrained model should be saved at 
                  ./ribDeepMedic/output/cnnModels/tinyCnn.initial.DATE+TIME.save.
@@ -107,7 +111,8 @@ If everything looks fine, briefly rejoice and continue...
 The model should be loaded and training for two epochs should be performed (in tinyCnn).
 After each epoch the trained model is saved at ribDeepMedic/output/cnnModels/trainSessionWithValidTinyCnn.
 The logs for the sessions should be found in ribDeepMedic/output/logs/trainSessionWithValidTinyCnn.txt.
-Finally, after each epoch, the model performs segmentation of the validation images and the segmentation results (.nii files) should appear in ribDeepMedic/output/predictions/trainSessionWithValidTinyCnn/predictions/.
+Finally, after each epoch, the model performs segmentation of the validation images and the segmentation results (.nii 
+files) should appear in ribDeepMedic/output/predictions/trainSessionWithValidTinyCnn/predictions/.
 If the training finishes normally (should take 5 mins) and you can see the mentioned files in the corresponding folders, beautiful.
 
 **To test with the trained model (replace DATE+TIME):**
@@ -179,47 +184,111 @@ For example:
  trained model (Doc., Sec. 3.2)
 
 **3. How it works**
-In this section we will go through the process in a bit more detail. We also explain the main parameters that should be specified in the configuration files.
+In this section we will go through the process in a bit more detail. We also explain the main parameters that should be 
+specified in the configuration files.
 
 Note: The config files are parsed as python scripts, thus follow python syntax. Any commented-out configuration variables are internally given default values.
 
 **3.1. Model Creation**
 
-After reading the parameters given in modelConfig.cfg, a CNN-model will be created and saved with cPickle in the output folder. The session prints all the parameters that are used for the model-creation on the screen and to a log.txt file.
+After reading the parameters given in modelConfig.cfg, a CNN-model will be created and saved with cPickle in the output 
+folder. The session prints all the parameters that are used for the model-creation on the screen and to a log.txt file.
 
 The main parameters to specify the CNN model are the following.
 
 Generic:
 
-**modelName:** the cnn-model’s name, will be used for naming the files that the model is being saved with after its creation, but also during training.
-
-**folderForOutput:** The main output folder. Saved model and logs will be placed here.
+  * **modelName:** the cnn-model’s name, will be used for naming the files that the model is being saved with after its  
+  creation, but also during training.
+  * **folderForOutput:** The main output folder. Saved model and logs will be placed here.
 
 Task Specific:
 
-**numberOfOutputClasses:** DeepMedic is multiclass system. This number should include the background, and defines the number of FMs in the last, classification layer.
-
-**numberOfInputChannels:** Specify the number of modalities/sequences/channels of the scans.
+ * **numberOfOutputClasses:** DeepMedic is multiclass system. This number should include the background, and defines the  
+ number of FMs in the last, classification layer.
+ * **numberOfInputChannels:** Specify the number of modalities/sequences/channels of the scans.
 
 Architecture:
 
-**numberFMsPerLayerNormal:** A list which needs to have as many entries as the number of layers in the normal pathway that we want to create. Each entry is a number, which defines the number of feature-maps in the corresponding layer.
-
-**kernelDimPerLayerNormal:** The dimensions of the kernels per layer. 
-
-**useSubsampledPathway:** Setting this to “True” creates a subsampled-pathway, with the same architecture as the normal one. “False” for single-scale processing with the normal pathway only. Additional parameters allow tailoring this pathway further.
-
-**numberFMsPerLayerFC:** The final layers of the two pathways are contatenated. This parameter allows the addition of extra hidden FC layers before the classification layer. The number of entries specified how many extra layers, the number of each entry specifies the number of FMs in each layer. Final classification layer not included.
+ * **numberFMsPerLayerNormal:** A list which needs to have as many entries as the number of layers in the normal pathway  
+ that we want to create. Each entry is a number, which defines the number of feature-maps in the corresponding layer.
+ *  **kernelDimPerLayerNormal:** The dimensions of the kernels per layer. 
+ * **useSubsampledPathway:** Setting this to “True” creates a subsampled-pathway, with the same architecture as the normal  
+ one. “False” for single-scale processing with the normal pathway only. Additional parameters allow tailoring this pathway 
+ further.
+ * **numberFMsPerLayerFC:** The final layers of the two pathways are contatenated. This parameter allows the addition of  
+ extra hidden FC layers before the classification layer. The number of entries specified how many extra layers, the number 
+ of each entry specifies the number of FMs in each layer. Final classification layer not included.
 
 Image Segments and Batch Sizes:
 
-**segmentsDim(Train/Val/Inference):** The dimensions of the input-segment. Different sizes can be used for training, validation, inference (testing). Bigger sizes require more memory and computation. Training segment size greatly influences distribution of training samples.
-Validation segments are by default as large as the receptive field (one patch).
-Size of testing-segments only influences speed.
+  * **segmentsDim(Train/Val/Inference):** The dimensions of the input-segment. Different sizes can be used for training, 
+  validation, inference (testing). Bigger sizes require more memory and computation. Training segment size greatly  
+  influences distribution of training samples.
+    Validation segments are by default as large as the receptive field (one patch).
+    Size of testing-segments only influences speed.
+  *  **Batch Size:** The number of segments to process simultaneously on GPU. In training, bigger batch sizes achieve better      convergence and results, but require more computation and memory.
+     Batch sizes for Validation and Inference are less important, greater once just speedup the process.
 
-**Batch Size:** The number of segments to process simultaneously on GPU. In training, bigger batch sizes achieve better convergence and results, but require more computation and memory.
-Batch sizes for Validation and Inference are less important, greater once just speedup the process.
+  More variables are available, but are of less importance (regularization, optimizer, etc). They are described in the  
+  config files of the provided examples.
+  
+**3.2 Training**
+Training parameters:
+  
+Generic Parameters:
+  * **sessionName:** The name of the session. Used to save the trained models, logs and results.
+  * **folderForOutput:** The main output folder.
+  * **cnnModelFilePath:** path to a saved CNN model.
+  
+Input for Training:
+  * **channelsTraining:** For each of the input channels, this list should hold one entry. Each entry should be a path to a 
+  file. These files should list the paths to the corresponding channels for each of the training subjects. 
+  * **gtLabelsTraining:** the path to a file. That file should list the paths to the ground-truth labels for all training 
+  subjects.
+  * **roiMasksTraining:** In many tasks we can easily define a Region Of Interest and get a mask of it. 
+  this parameter allows pointing to the roi-masks for each training subject. Sampling or inference will not be performed 
+  outside this area, focusing the learning capacity of the network inside it. If this is not available, detete or comment  
+  this variable out and sampling will be performed on whole volumes.
+  
+ Training Cycle:
+   * **numberOfEpochs:** Total number of epochs until the training finishes.
+   * **numberOfSubepochs:** Number of subepochs to run per epoch
+   * **numOfCasesLoadedPerSubepoch:** At each subepoch, the images from maximum that many cases are loaded to extract  
+     training samples. This is done to allow training on databases that may have hundreds or thousands of images, and  
+     loading them all for sample-extraction would be just too expensive.
+    * **numberTrainingSegmentsLoadedOnGpuPerSubep:** At every subepoch, we extract in total this many segments, which are 
+    loaded on the GPU in order to perform the optimization steps. Number of optimization steps per subepoch is this number 
+    divided by the batch-size-training (see model-config). The more segments, the more GPU memory and computation   
+    required.
+    
+Learning Rate Schedule: 
+   * **stable0orAuto1orPredefined2orExponential3LrSchedule:** Schedules to lower the Learning Rate with. Stable lowers LR   
+   every few epochs. Auto lowers it when validation accuracy plateaus (unstable). Predefined requires the user to specify
+   which epochs to lower it. Exponential lowers it over time while it increases momentum. We advice to use constant LR,
+   observe progress of training and lower it manually when improvement plateaus. Otherwise, use exponential, but make sure 
+   that training is long enough to ensure convergence before LR is significantly reduced.
+   
+Data Augmentation:
+   * **reflectImagesPerAxis:** Specify whether you d like the images to be randomly reflected in respect to each axis, for
+   augmentation during training.
+   * **performIntAugm:**  Randomly apply a change to segments’ intensities: I' = (I + shift) * multi.
+   
+Validation:
+   * ***performValidationOnSamplesThroughoutTraining, performFullInferenceOnValidationImagesEveryFewEpochs:** Booleans to 
+   specify whether we want to perform validation, since it is actually time consuming.
+   * **channelsValidation, gtLabelsValidation, roiMasksValidation:** Similar to the corresponding training entries.
+   If default settings for validation-sampling are enabled, sampling for validation is done in a uniform way over the whole 
+   volume, to achieve correct distribution of the classes.
+   * **numberValidationSegmentsLoadedOnGpuPerSubep:** on how many validation segments (samples) to perform the validation
+   * **numberOfEpochsBetweenFullInferenceOnValImages:** Every how many epochs to perform full-inference validation. 
+   It might be slow to process all validation cases often.
+   * **namesForPredictionsPerCaseVal:** If full inference is performed, we may as well save the results to visually check 
+   progress. Here you need to specify the path to a file. That file should contain a list of names, one for each case, with
+   which to save the results. Simply the names, not paths. Results will be saved in the output folder.
+   
+     
+     
 
-More variables are available, but are of less importance (regularization, optimizer, etc). They are described in the config files of the provided examples.
 
 

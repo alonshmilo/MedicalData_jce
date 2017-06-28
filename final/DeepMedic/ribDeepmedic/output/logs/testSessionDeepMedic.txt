@@ -1,0 +1,89 @@
+2017-06-18 12:37:39.317651 >> CONFIG: The configuration file for the testing session was loaded from: /home/alonstav/deepmedic/ribDeepmedic/configFiles/deepMedic/test/testConfig.cfg
+2017-06-18 12:37:39.317712 >> =========== Loading the CNN model for testing... ===============
+2017-06-18 12:37:39.317746 >> WARN: A CNN-Model to use was specified both in the command line input and in the test-config-file! The input by the command line will be used: /home/alonstav/deepmedic/ribDeepmedic/output/cnnModels/trainSessionDeepMedic/deepMedic.trainSessionDeepMedic.final.2017-06-14.19.06.25.593084.save
+2017-06-18 12:37:39.317775 >> ...Loading the network can take a few minutes if the model is big...
+2017-06-18 12:37:56.609527 >> The CNN model was loaded successfully from: /home/alonstav/deepmedic/ribDeepmedic/output/cnnModels/trainSessionDeepMedic/deepMedic.trainSessionDeepMedic.final.2017-06-14.19.06.25.593084.save
+2017-06-18 12:37:56.611710 >> 
+===========       NEW TESTING SESSION         ===============
+2017-06-18 12:37:56.611743 >> =============================================================
+2017-06-18 12:37:56.611767 >> ================= PARAMETERS OF THIS SESSION ================
+2017-06-18 12:37:56.611792 >> =============================================================
+2017-06-18 12:37:56.611818 >> sessionName = testSessionDeepMedic
+2017-06-18 12:37:56.611844 >> ~~~~~~~~~~~~~~~~~~~~INPUT~~~~~~~~~~~~~~~~
+2017-06-18 12:37:56.611870 >> Number of Classes (from CNN Model) = 2
+2017-06-18 12:37:56.611895 >> Number of cases to perform inference on = 1
+2017-06-18 12:37:56.611919 >> number of channels (modalities) = 1
+2017-06-18 12:37:56.611951 >> Paths to the channels of each case = [['/home/alonstav/deepmedic/ribDeepmedic/dataForExamples/brats2015TrainingData/test/Portal_phase_3_0_B40f_A1EH179_scan.nii.gz']]
+2017-06-18 12:37:56.611981 >> User provided Ground Truth labels for DSC calculation = True
+2017-06-18 12:37:56.612015 >> Paths to the provided GT labels per case = ['/home/alonstav/deepmedic/ribDeepmedic/dataForExamples/brats2015TrainingData/test/gt_179.nii.gz']
+2017-06-18 12:37:56.612041 >> User provided Region-Of-Interest Masks for faster inference = True
+2017-06-18 12:37:56.612071 >> Filepaths of the ROI Masks provided per case = ['/home/alonstav/deepmedic/ribDeepmedic/dataForExamples/brats2015TrainingData/test/Portal_phase_3_0_B40f_BONE_179_mask.nii.gz']
+2017-06-18 12:37:56.612101 >> ~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~
+2017-06-18 12:37:56.612127 >> Path to the main output-folder = /home/alonstav/deepmedic/ribDeepmedic/output
+2017-06-18 12:37:56.612157 >> Provided names to use to save results for each case = ['pred_brats_2013_pat0001_1.nii.gz', 'pred_brats_2013_pat0002_1.nii.gz']
+2017-06-18 12:37:56.612184 >> ~~~~~~~Ouput-parameters for Predictions (segmentation and probability maps)~~~~
+2017-06-18 12:37:56.612211 >> Save the predicted segmentation = True
+2017-06-18 12:37:56.612240 >> Save the probability maps = [True, True, True, True, True]
+2017-06-18 12:37:56.612269 >> Paths where to save predictions per case = ['/home/alonstav/deepmedic/ribDeepmedic/output/predictions/testSessionDeepMedic/predictions//pred_brats_2013_pat0001_1.nii.gz']
+2017-06-18 12:37:56.612296 >> ~~~~~~~Ouput-parameters for Feature Maps (FMs)~~~~~~
+2017-06-18 12:37:56.612322 >> Save FMs in individual images = False
+2017-06-18 12:37:56.612348 >> Save all requested FMs in one 4D image = False
+2017-06-18 12:37:56.612379 >> Indices of min/max FMs to save, per type of pathway (normal/subsampled/FC) and per layer = [[], []]
+2017-06-18 12:37:56.612409 >> Save Feature Maps at = ['/home/alonstav/deepmedic/ribDeepmedic/output/predictions/testSessionDeepMedic/features//pred_brats_2013_pat0001_1.nii.gz']
+2017-06-18 12:37:56.612434 >> ~~~~~~~ Parameters for Preprocessing ~~~~~~
+2017-06-18 12:37:56.612460 >> Pad Input Images = True
+2017-06-18 12:37:56.612486 >> ========== Done with printing session's parameters ==========
+2017-06-18 12:37:56.612511 >> =============================================================
+2017-06-18 12:37:56.612539 >> 
+=======================================================
+2017-06-18 12:37:56.612577 >> =========== Compiling the Testing Function ============
+2017-06-18 12:37:56.612604 >> =======================================================
+2017-06-18 12:37:56.612636 >> ...Building the function for testing and visualisation of FMs...
+2017-06-18 12:37:56.645175 >> ...Compiling the function for testing and visualisation of FMs... (This may take a few minutes...)
+2017-06-18 12:38:09.424335 >> The function for testing and visualisation of FMs was compiled.
+2017-06-18 12:38:09.424412 >> 
+======================================================
+2017-06-18 12:38:09.424441 >> =========== Testing with the CNN model ===============
+2017-06-18 12:38:09.424465 >> ======================================================
+2017-06-18 12:38:09.424511 >> ###########################################################################################################
+2017-06-18 12:38:09.424539 >> ############################# Starting full Segmentation of Testing subjects ##########################
+2017-06-18 12:38:09.424565 >> ###########################################################################################################
+2017-06-18 12:38:09.424611 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2017-06-18 12:38:09.424641 >> ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2017-06-18 12:38:09.424685 >> Loading subject with 1st channel at: /home/alonstav/deepmedic/ribDeepmedic/dataForExamples/brats2015TrainingData/test/Portal_phase_3_0_B40f_A1EH179_scan.nii.gz
+2017-06-18 12:38:18.043876 >> Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2017-06-18 12:38:18.291728 >> Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2017-06-18 12:38:18.291821 >> Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2017-06-18 12:38:18.291856 >> Total number of Segments to process:1190
+2017-06-18 12:38:18.291890 >> Processed 0/1190 Segments.
+2017-06-18 12:39:33.932670 >> Processed 230/1190 Segments.
+2017-06-18 12:40:49.692916 >> Processed 460/1190 Segments.
+2017-06-18 12:42:05.621482 >> Processed 690/1190 Segments.
+2017-06-18 12:43:21.802793 >> Processed 920/1190 Segments.
+2017-06-18 12:44:38.421864 >> Processed 1150/1190 Segments.
+2017-06-18 12:44:51.818541 >> TIMING: Segmentation of this subject: [Extracting:] 0.259138 [Loading:] 0.392115 [ForwardPass:] 392.049766 [Total:] 392.701019(s)
+2017-06-18 12:44:52.839711 >> Saving the new label (segmentation) image for the subject #0
+2017-06-18 12:44:54.445411 >> Image saved at: /home/alonstav/deepmedic/ribDeepmedic/output/predictions/testSessionDeepMedic/predictions/pred_brats_2013_pat0001_1_Segm.nii.gz
+2017-06-18 12:44:54.564940 >> Saving the new label (segmentation) image for the subject #0
+2017-06-18 12:44:57.981953 >> Image saved at: /home/alonstav/deepmedic/ribDeepmedic/output/predictions/testSessionDeepMedic/predictions/pred_brats_2013_pat0001_1_ProbMapClass0.nii.gz
+2017-06-18 12:44:58.083938 >> Saving the new label (segmentation) image for the subject #0
+2017-06-18 12:45:02.280793 >> Image saved at: /home/alonstav/deepmedic/ribDeepmedic/output/predictions/testSessionDeepMedic/predictions/pred_brats_2013_pat0001_1_ProbMapClass1.nii.gz
+2017-06-18 12:45:02.280865 >> +++++++++++++++++++++ Reporting Segmentation Metrics for the subject #0 ++++++++++++++++++++++++++
+2017-06-18 12:45:04.045039 >> ACCURACY: (Testing) The Per-Class DICE Coefficients for subject with index #0 equal: DICE1=[ 0.6771 0.6771 ] DICE2=[ 0.6771 0.6771 ] DICE3=[ 0.6771 0.6771 ]
+2017-06-18 12:45:04.045121 >> EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
+2017-06-18 12:45:04.045163 >> EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
+2017-06-18 12:45:04.045212 >> EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
+2017-06-18 12:45:04.045251 >> +++++++++++++++++++++++++++++++ Segmentation of all subjects finished +++++++++++++++++++++++++++++++++++
+2017-06-18 12:45:04.045289 >> +++++++++++++++++++++ Reporting Average Segmentation Metrics over all subjects ++++++++++++++++++++++++++
+2017-06-18 12:45:04.045362 >> ACCURACY: (Testing) The Per-Class average DICE Coefficients over all subjects are: DICE1=[ 0.6771 0.6771 ] DICE2=[ 0.6771 0.6771 ] DICE3=[ 0.6771 0.6771 ]
+2017-06-18 12:45:04.045399 >> EXPLANATION: DICE1/2/3 are lists with the DICE per class. For Class-0, we calculate DICE for whole foreground, i.e all labels merged, except the background label=0. Useful for multi-class problems.
+2017-06-18 12:45:04.045434 >> EXPLANATION: DICE1 is calculated as segmentation over whole volume VS whole Ground Truth (GT). DICE2 is the segmentation within the ROI vs GT. DICE3 is segmentation within the ROI vs the GT within the ROI.
+2017-06-18 12:45:04.045467 >> EXPLANATION: If an ROI mask has been provided, you should be consulting DICE2 or DICE3.
+2017-06-18 12:45:04.045581 >> TIMING: Testing process took time: 414.241771(s)
+2017-06-18 12:45:04.045617 >> ###########################################################################################################
+2017-06-18 12:45:04.045653 >> ############################# Finished full Segmentation of Testing subjects ##########################
+2017-06-18 12:45:04.045687 >> ###########################################################################################################
+2017-06-18 12:45:04.063164 >> 
+======================================================
+2017-06-18 12:45:04.063238 >> =========== Testing session finished =================
+2017-06-18 12:45:04.063275 >> ======================================================

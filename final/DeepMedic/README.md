@@ -12,6 +12,7 @@ Table of Contents
 * [3. How it works](http://) 
   * [3.1. Model Creation](http://)
   * [3.2 Training](http://)
+  * [3.3. Testing](http://)
 
 ## 1. Installation and Requirements
 
@@ -286,6 +287,34 @@ Validation:
    * **namesForPredictionsPerCaseVal:** If full inference is performed, we may as well save the results to visually check 
    progress. Here you need to specify the path to a file. That file should contain a list of names, one for each case, with
    which to save the results. Simply the names, not paths. Results will be saved in the output folder.
+   
+**3.3. Testing**
+Testing Parameters:
+
+Main Parameters:
+   * **sessionName:** The name for the session, to use for saving the logs and inference results.
+   * **folderForOutput:** The output folder to save logs and results.
+   * **cnnModelFilePath:** The path to the cnn model to use. 
+   * **channels:** List of paths to the files that list the files of channels per testing case. Similar to the corresponding
+   parameter for training.
+   * **namesForPredictionsPerCase:** Path to a file that lists the names to use for saving the prediction for each subject.
+   * **roiMasks:** If masks for a restricted Region-Of-Interest can be made, inference will only be performed within it.
+   If this parameter is omitted in the config file, whole volume is scanned.
+   * **gtLabels:** Path to a file that lists the file-paths to Ground Truth labels per case. Not required for testing, 
+   but if given, DSC accuracy metric is reported.
+   
+Saving Predictions:
+   * ** saveSegmentation, saveProbMapsForEachClass:** Specify whether you would like the segmentation masks and the 
+   probability maps of a class saved.
+   
+Saving Feature Maps:
+* **saveIndividualFms, saveAllFmsIn4DimImage:** Specify whether you would like the feature maps saved.
+Possible to save each FM in a separate files, or create a 4D file with all of them.
+Note that FMs are many and the 4D file can be several hundreds of MBs, or GBs.
+
+
+   
+
    
      
      

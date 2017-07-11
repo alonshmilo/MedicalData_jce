@@ -10,6 +10,9 @@
 * This repository will include all the codes and information about the progress of the project, from the bid stage to the presentation.
 * Please view the wiki-pages for more information
 * **Folder "final" contains the final code and files for the project**
+* Project was finished at 19 July 2017 presenting the poster. 
+* An Informative report was submitted, in order to continue the project in the future.
+* We would like to thank everybody that helped us during our work.
 
 ## Staff:
 * Presentors: Alon Tsalik Shmilovich and Stav Barazani <br>
